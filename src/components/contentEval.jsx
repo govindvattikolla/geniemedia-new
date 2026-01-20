@@ -1,0 +1,130 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Frown, UserX, FileText, PenTool, Smile, Users, TrendingUp, Video, Sparkles } from 'lucide-react';
+
+const ContentMarketing = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const oldWayItems = [
+    { icon: Frown, text: 'Brand voices matter most' },
+    { icon: UserX, text: 'Channels were for promoting anchor assets' },
+    { icon: FileText, text: 'Keyword stuffing for SEO' },
+    { icon: FileText, text: 'Content = Blog' },
+    { icon: PenTool, text: 'Handwritten' }
+  ];
+
+  const newWayItems = [
+    { icon: Smile, text: 'Spokespeople matter most' },
+    { icon: Users, text: 'Channels require zero-click approaches' },
+    { icon: TrendingUp, text: 'SEO 🤝 AEOI' },
+    { icon: Video, text: 'Content = Multimedia' },
+    { icon: Sparkles, text: 'AI-Assisted' }
+  ];
+
+  return (
+    <div ref={sectionRef} className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div className="max-w-7xl w-full">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center mb-12 sm:mb-16 lg:mb-20 text-gray-800">
+          Content marketing is <span className="italic">evolving</span>
+        </h1>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
+          {/* Old Way Card */}
+          <div
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+            }`}
+          >
+            <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
+              <h2 className="text-2xl sm:text-3xl font-medium mb-8 text-gray-700">
+                The old way
+              </h2>
+              <div className="space-y-5">
+                {oldWayItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 transform transition-all duration-500"
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-400 bg-opacity-30 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-gray-600" />
+                    </div>
+                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed pt-1.5">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* VS Divider */}
+          <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+            <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center shadow-2xl border-4 border-gray-100">
+              <span className="text-2xl font-light text-gray-500 italic">vs.</span>
+            </div>
+          </div>
+
+          {/* Mobile VS Divider */}
+          <div className="flex lg:hidden items-center justify-center -my-4">
+            <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-xl border-4 border-gray-100">
+              <span className="text-xl font-light text-gray-500 italic">vs.</span>
+            </div>
+          </div>
+
+          {/* The Animalz Way Card */}
+          <div
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+            }`}
+          >
+            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
+              <h2 className="text-2xl sm:text-3xl font-medium mb-8 text-white">
+                The Animalz Way
+              </h2>
+              <div className="space-y-5">
+                {newWayItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 transform transition-all duration-500"
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <p className="text-white text-base sm:text-lg leading-relaxed pt-1.5">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContentMarketing;

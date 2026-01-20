@@ -1,0 +1,137 @@
+import React, { useState } from 'react';
+import { ChevronDown, MessageCircle, ArrowUp } from 'lucide-react';
+import Lottie from 'lottie-react';
+import hummingBird from '../assets/lottie/hummingbird 1.json';
+import arrows from '../assets/lottie/Animated Arrows.json'
+import AboutSection1 from '../components/AboutSec';
+import Services1 from '../components/Services'
+import ContentEvolution from '../components/contentEval';
+import ContentMarketing from '../components/contentEval';
+import ProcessSection from '../components/Process';
+import VideoTestimonials from '../components/testimonials';
+import ContactSec from '../components/Contact';
+import { TypingText } from '../components/TypingEff';
+
+
+export default function HeroSection() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <>
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes wave {
+          0%, 100% { transform: translateX(0) translateY(0); }
+          25% { transform: translateX(-5px) translateY(-10px); }
+          50% { transform: translateX(0) translateY(-15px); }
+          75% { transform: translateX(5px) translateY(-10px); }
+        }
+
+        @keyframes draw {
+          to { stroke-dashoffset: 0; }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-wave {
+          animation: wave 4s ease-in-out infinite;
+        }
+
+        .draw-animation {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+
+        .underline-cyan {
+          position: relative;
+          display: inline-block;
+        }
+
+        .underline-cyan::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 4px;
+          background: #22d3ee;
+          border-radius: 2px;
+        }
+      `}</style>
+
+      
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen bg-gray-50 flex items-center pt-20 overflow-hidden">
+        
+        {/* Left Character - Lamp */}
+        <div className="absolute left-0 sm:left-8 lg:left-0 hidden md:block bottom-5 w-32 sm:w-40 lg:w-48 animate-float">
+          <Lottie
+             animationData={arrows}
+              loop={true}
+              style={{ width: 300, height: 300 }} />
+         
+        </div>
+
+        {/* Right Character - Genie */}
+        <div className="absolute right-0 sm:right-8 lg:right-16 bottom-2 w-22 sm:w-24  lg:w-48 animate-float" style={{animationDelay: '1s'}}>
+        
+            <Lottie
+             animationData={hummingBird}
+              loop={true}
+              style={{ width: 300, height: 300 }} />
+
+            
+        
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
+            <span className="italic">Smarter Digital Marketing </span>
+            <br />
+            <span className="italic">Stronger Growth.</span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-12">
+            Resonate with audiences and algorithms through{' '}
+            <TypingText/>
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+              Get Started
+            </button>
+            
+          </div>
+
+        
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce ">
+          <ChevronDown className="w-8 h-8 text-gray-400" />
+        </div>
+      </section>
+
+      <AboutSection1/>
+
+      
+      <Services1/>
+      <ContentMarketing/>
+      <ProcessSection/>
+      <VideoTestimonials/>
+      <ContactSec/>
+
+    
+    </>
+  );
+}
