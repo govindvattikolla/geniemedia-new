@@ -95,7 +95,7 @@ export default function HeroSection() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-36 text-center">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
             <span className="italic">Smarter Digital Marketing </span>
             <br />
