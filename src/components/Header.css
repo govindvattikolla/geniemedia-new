@@ -106,7 +106,7 @@
           left: 50%;
           width: 0;
           height: 3px;
-          background: linear-gradient(90deg, #FF6B00, #FF8C3A);
+          background: linear-gradient(90deg, #000000, #000000);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transform: translateX(-50%);
           border-radius: 2px;
@@ -117,7 +117,7 @@
         }
 
         .nav-link:hover {
-          color: #FF6B00;
+          color: #9500ff;
           transform: translateY(-2px);
         }
 
@@ -131,7 +131,7 @@
 
         .dropdown-item:hover {
           transform: translateX(8px);
-          background: linear-gradient(90deg, rgba(255, 107, 0, 0.1), transparent);
+          background: linear-gradient(90deg, rgba(115, 0, 255, 0.1), transparent);
         }
 
         .btn-primary {

@@ -29,10 +29,10 @@ const Header = () => {
       name: 'Services',
       href: '#services',
     dropdown: [
-    { name: 'Digital Marketing', href: '/digital_marketing', icon: <TrendingUp/> },
-    { name: 'Website Development', href: '/web_development', icon: <Code/> },
-    { name: 'Production House', href: '/production_house', icon: <Video/> },
-    { name: 'Podcast Studio Rentals', href: '/podcast_studio', icon: <Mic/> }
+    { name: 'Digital Marketing', href: '/digitalMarketing', icon: <TrendingUp/> },
+    { name: 'Website Development', href: '/webDevelopment', icon: <Code/> },
+    { name: 'Production House', href: '/productionHouse', icon: <Video/> },
+    { name: 'Podcast Studio Rentals', href: '/podcastStudio', icon: <Mic/> }
   ]
     },
     { name: 'Projects', href: '/projects' },
@@ -75,7 +75,7 @@ const Header = () => {
                 >
                   <a
                     href={item.href}
-                    className="nav-link flex items-center gap-1 text-m font-semibold text-gray-900 hover:text-orange-600 py-1 text-base"
+                    className="nav-link flex items-center gap-1 text-m font-semibold text-gray-900 hover:text-purple-600 py-1 text-base"
                   >
                     {item.name}
                     {item.dropdown && (
@@ -87,7 +87,6 @@ const Header = () => {
                       />
                     )}
                   </a>
-                  
                                   {/* Dropdown Menu */}
                   {item.dropdown && activeDropdown === item.name && (
                     <div
@@ -111,7 +110,7 @@ const Header = () => {
                             flex items-center gap-3 
                             px-5 py-3.5 
                             text-gray-700 
-                            hover:text-orange-600 
+                            hover:text-purple-600 
                             border-b border-gray-50 
                             last:border-0
                           "
@@ -131,7 +130,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
              
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@kkdigitalgrowth.com">
-              <button className="btn-primary px-6 py-2.5 text-white font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10" >
+              <button className=" px-6 py-2.5 text-white bg-purple-600 font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10" >
                 <Mail size={16} />
                 Contact Us
               </button>  </a>
@@ -146,9 +145,9 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className="hamburger-line w-full h-0.5 bg-gray-400 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-400 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-400 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
               </div>
             </button>
           </div>
@@ -206,10 +205,10 @@ const Header = () => {
 
               {/* Mobile CTA Buttons */}
               <div className="mobile-menu-item mt-4 space-y-3">
-                <button className="w-80% btn-secondary relative px-5 py-3 text-orange-600 font-semibold rounded-full flex items-center justify-center gap-2 z-10">
+                {/* <button className="w-80% btn-secondary relative px-5 py-3 text-orange-600 font-semibold rounded-full flex items-center justify-center gap-2 z-10">
                   <Phone size={18} />
                   Book a Call
-                </button>
+                </button> */}
                 <button className="w-80% btn-primary px-6 py-3 text-white font-semibold rounded-full flex items-center justify-center gap-2 shadow-lg relative z-10">
                   <Mail size={18} />
                   Contact Us

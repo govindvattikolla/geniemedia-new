@@ -34,7 +34,7 @@ export function TypingText() {
   }, [text, isDeleting, wordIndex]);
 
   return (
-    <span className="underline font-medium text-[#9463EE]">
+    <span className="underline font-medium text-purple-800">
       {text}
       <span className="animate-pulse">|</span>
     </span>

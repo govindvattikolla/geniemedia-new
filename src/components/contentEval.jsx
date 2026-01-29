@@ -56,7 +56,7 @@ const ContentMarketing = () => {
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
             }`}
           >
-            <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
+            <div className="bg-purple-200 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl sm:text-3xl font-medium mb-8 text-gray-700">
                 The old way
               </h2>
@@ -68,7 +68,7 @@ const ContentMarketing = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-400 bg-opacity-30 flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-gray-600" />
+                      <item.icon className="w-5 h-5 text-gray-800" />
                     </div>
                     <p className="text-gray-700 text-base sm:text-lg leading-relaxed pt-1.5">
                       {item.text}
@@ -82,14 +82,14 @@ const ContentMarketing = () => {
           {/* VS Divider */}
           <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
             <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center shadow-2xl border-4 border-gray-100">
-              <span className="text-2xl font-light text-gray-500 italic">vs.</span>
+              <span className="text-2xl font-light text-gray-900 italic">vs.</span>
             </div>
           </div>
 
           {/* Mobile VS Divider */}
           <div className="flex lg:hidden items-center justify-center -my-4">
             <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-xl border-4 border-gray-100">
-              <span className="text-xl font-light text-gray-500 italic">vs.</span>
+              <span className="text-xl font-light text-gray-900 italic">vs.</span>
             </div>
           </div>
 
@@ -99,9 +99,9 @@ const ContentMarketing = () => {
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
           >
-            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
+            <div className="bg-purple-600 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl transform hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl sm:text-3xl font-medium mb-8 text-white">
-                The Animalz Way
+                The Genie Way
               </h2>
               <div className="space-y-5">
                 {newWayItems.map((item, index) => (
@@ -110,10 +110,10 @@ const ContentMarketing = () => {
                     className="flex items-start gap-4 transform transition-all duration-500"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 bg-opacity-20 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-white text-base sm:text-lg leading-relaxed pt-1.5">
+                    <p className="text-gray-200 text-base sm:text-lg leading-relaxed pt-1.5">
                       {item.text}
                     </p>
                   </div>

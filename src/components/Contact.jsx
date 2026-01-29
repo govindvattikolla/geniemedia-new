@@ -208,7 +208,7 @@ const ContactSec = () => {
 
         <div className="relative max-w-7xl mx-auto">
           <div className={`text-center mb-10 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-200 border border-orange-200 rounded-full mb-4">
               <Globe className="text-[#9463EE]" size={16} />
               <span className="text-sm font-semibold text-balck">Get In Touch</span>
             </div>

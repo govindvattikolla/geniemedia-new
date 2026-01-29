@@ -69,7 +69,7 @@ export default function HeroSection() {
       
 
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gray-50 flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen bg-white flex items-center pt-20 overflow-hidden">
         
         {/* Left Character - Lamp */}
         <div className="absolute left-0 sm:left-8 lg:left-0 hidden md:block bottom-5 w-32 sm:w-40 lg:w-48 animate-float">
@@ -81,33 +81,35 @@ export default function HeroSection() {
         </div>
 
         {/* Right Character - Genie */}
-        <div className="absolute right-0 sm:right-8 lg:right-16 bottom-2 w-22 sm:w-24  lg:w-48 animate-float" style={{animationDelay: '1s'}}>
+        <div className="absolute right-0 sm:right-8 lg:right-16 bottom-20 w-22 sm:w-24  lg:w-60 animate-float hidden md:block" style={{animationDelay: '1s'}}>
         
-            <Lottie
+            {/* <Lottie
              animationData={hummingBird}
               loop={true}
-              style={{ width: 300, height: 300 }} />
+              style={{ width: 300, height: 300 }} /> */}
+
+              <img src="https://img.freepik.com/premium-vector/magic-lamp-genie-icon-logo-template_757387-4967.jpg" alt="lamp" width='400px' height='600px' />
 
             
         
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36 text-center">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
             <span className="italic">Smarter Digital Marketing </span>
             <br />
             <span className="italic">Stronger Growth.</span>
           </h1>
 
-          <p className="text-xl sm:text-2xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-12">
+          <p className="text-xl sm:text-2xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-6">
             Resonate with audiences and algorithms through{' '}
             <TypingText/>
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:mb-16">
+            <button className="bg-purple-500 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
               Get Started
             </button>
             

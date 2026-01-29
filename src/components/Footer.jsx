@@ -24,7 +24,7 @@ const company = [
  
 
   return (
-    <footer className="bg-gray-100 text-gray-900">
+    <footer className="bg-gray-50 text-gray-900">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -40,17 +40,17 @@ const company = [
             
             {/* Social Media Icons */}
             <div className="flex space-x-4">
-              <a href="https://m.facebook.com/826093997257312/" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-orange-500 flex items-center justify-center transition-colors duration-300">
+              <a href="https://m.facebook.com/826093997257312/" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Facebook className="w-5 h-5" />
               </a>
               
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-orange-500 flex items-center justify-center transition-colors duration-300">
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/itsgeniemedia_official/" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-orange-500 flex items-center justify-center transition-colors duration-300">
+              <a href="https://www.instagram.com/itsgeniemedia_official/" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://www.youtube.com/@itsgeniemedia_official" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-orange-500 flex items-center justify-center transition-colors duration-300">
+              <a href="https://www.youtube.com/@itsgeniemedia_official" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -62,7 +62,7 @@ const company = [
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href={service.link} className="text-gray-800 hover:text-orange-500 transition-colors duration-200 inline-block">
+                  <a href={service.link} className="text-gray-800 hover:text-blue-700 transition-colors duration-200 inline-block">
                     {service.title}
                   </a>
                 </li>
@@ -76,7 +76,7 @@ const company = [
             <ul className="space-y-3">
               {company.map((item, index) => (
                 <li key={index}>
-                  <a href={item.link} className="text-gray-800 hover:text-orange-500 transition-colors duration-200 inline-block">
+                  <a href={item.link} className="text-gray-800 hover:text-blue-700 transition-colors duration-200 inline-block">
                     {item.title}
                   </a>
                 </li>

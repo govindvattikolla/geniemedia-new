@@ -221,12 +221,12 @@ const VideoTestimonials = () => {
         }
 
         .carousel-item.center .video-card {
-          box-shadow: 0 30px 80px rgba(255, 107, 0, 0.3);
+          box-shadow: 0 30px 80px rgba(107, 79, 208, 0.3);
         }
 
         .carousel-item.center .video-card:hover {
           transform: translateY(-2px);
-          box-shadow: 0 35px 90px rgba(255, 107, 0, 0.4);
+          box-shadow: 0 35px 90px rgba(0, 123, 255, 0.4);
         }
 
         .carousel-nav {
@@ -239,13 +239,13 @@ const VideoTestimonials = () => {
           justify-content: center;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+          box-shadow: 0 10px 30px rgba(25, 0, 255, 0.3);
           z-index: 20;
         }
 
         .carousel-nav:hover {
           transform: scale(1.1);
-          box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+          box-shadow: 0 15px 40px rgba(0, 106, 255, 0.5);
         }
 
         .carousel-nav:active {
@@ -364,7 +364,7 @@ const VideoTestimonials = () => {
 
       <section 
         ref={sectionRef}
-        className="relative bg-gradient-to-br from-white via-orange-50 to-white py-14 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative bg-purple-50 py-14 px-4 sm:px-6 lg:px-8 overflow-hidden"
       >
         {/* Background Decorations */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -375,7 +375,7 @@ const VideoTestimonials = () => {
         <div className="relative max-w-8xl mx-auto">
           {/* Section Header */}
           <div className={`text-center mb-8 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-200 border border-blue-200 rounded-full mb-4">
               <Star className="text-orange-500" size={16} fill="currentColor" />
               <span className="text-sm font-semibold text-black">
                 Video Testimonials
@@ -442,7 +442,7 @@ const VideoTestimonials = () => {
                        
                         <div className="p-6">
                           
-                          <div className="quote-icon1 w-12 h-12 bg-[#9463EE] rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                          <div className="quote-icon1 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4 shadow-lg">
                             <Quote className="text-white" size={24} />
                           </div>
 
@@ -502,8 +502,8 @@ const VideoTestimonials = () => {
                   onClick={() => goToSlide(index)}
                   className={`transition-all duration-300 rounded-full ${
                     index === currentIndex 
-                      ? 'w-10 h-3 bg-gradient-to-r from-orange-500 to-orange-600' 
-                      : 'w-3 h-3 bg-gray-300 hover:bg-orange-300'
+                      ? 'w-10 h-3 bg-blue-900' 
+                      : 'w-3 h-3 bg-blue-300 hover:bg-blue-500'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

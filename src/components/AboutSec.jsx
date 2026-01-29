@@ -11,7 +11,7 @@ const AboutSection1 = () => {
       value: 7, 
       suffix: '+',
       label: 'Years of Expertise',
-      color: 'bg-[#9463EE]',
+      color: 'bg-purple-300',
       maxHeight: 112, // h-28 in pixels
       height: 'h-28',
       mobileWidth: 48,
@@ -21,7 +21,7 @@ const AboutSection1 = () => {
       value: 3, 
       suffix: '+',
       label: 'Countries Served',
-      color: 'bg-[#7ddbfc]',
+      color: 'bg-purple-700',
       maxHeight: 128, // h-32 in pixels
       height: 'h-32',
       mobileWidth: 62,
@@ -31,7 +31,7 @@ const AboutSection1 = () => {
       value: 150, 
       suffix: '+',
       label: 'Growth Campaigns ',
-      color: 'bg-[#9463EE]',
+      color: 'bg-purple-300',
       maxHeight: 192, // h-48 in pixels
       height: 'h-38',
       mobileWidth: 106,
@@ -41,7 +41,7 @@ const AboutSection1 = () => {
       value: 400, 
       suffix: '+',
       label: 'Digital Transformations',
-      color: 'bg-[#7ddbfc]',
+      color: 'bg-purple-700',
       maxHeight: 240, // h-60 in pixels
       height: 'h-60',
       mobileWidth: 180,
@@ -51,7 +51,7 @@ const AboutSection1 = () => {
       value: 800, 
       suffix: '+',
       label: 'Projects Delivered',
-      color: 'bg-[#9463EE]',
+      color: 'bg-purple-300',
       maxHeight: 256, // h-64 in pixels
       height: 'h-64',
       mobileWidth: 260,
@@ -190,10 +190,10 @@ const AboutSection1 = () => {
 
         @keyframes glow {
           0%, 100% {
-            box-shadow: 0 0 5px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 0 5px #eae5ff;
           }
           50% {
-            box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+            box-shadow: 0 0 20px #9877ff;
           }
         }
 
@@ -243,7 +243,7 @@ const AboutSection1 = () => {
 
         .counter-number.updating {
           transform: scale(1.1);
-          color: #FF6B00;
+          color: #eae5ff;
         }
 
         .stat-label {
@@ -251,19 +251,19 @@ const AboutSection1 = () => {
         }
 
         .stat-container:hover .stat-label {
-          color: #FF6B00;
+          color: #3d06d1;
           transform: translateY(-5px);
         }
 
         .stat-container:hover .counter-number {
-          color: #FF6B00;
+          color: #3d06d1;
           transform: scale(1.15);
         }
       `}</style>
 
       <section 
         ref={sectionRef}
-        className="bg-blue-50 pt-10 px-6 lg:px-12"
+        className="bg-purple-50 pt-10 px-6 lg:px-12"
         id='about'
       >
         <div className="max-w-6xl mx-auto">

@@ -40,16 +40,16 @@ const ProcessSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12 lg:mb-16">
-          <p className="text-gray-400 text-sm sm:text-base tracking-wider uppercase mb-4">
+          <p className="text-purple-800 text-sm sm:text-base tracking-wider uppercase mb-4">
             OUR PROCESS
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6">
             What can you <span className="italic">expect?</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-xl mb-8">
             Need more details? We're happy to work through them together.
           </p>
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-300 text-base sm:text-lg font-medium">
+          <button className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-300 text-base sm:text-lg font-medium">
             Let's talk
             <MessageCircle className="w-5 h-5" />
           </button>
@@ -64,8 +64,8 @@ const ProcessSection = () => {
               onMouseLeave={() => setHoveredCard(null)}
               className={`rounded-3xl p-8 sm:p-10 lg:p-12 transition-all duration-500 ease-out transform ${
                 hoveredCard === step.id
-                  ? 'bg-gradient-to-br from-purple-600 to-purple-700 shadow-2xl scale-105 -translate-y-2'
-                  : 'bg-white shadow-lg hover:shadow-xl'
+                  ? 'bg-gradient-to-br from-purple-500 to-purple-600 shadow-2xl scale-105 -translate-y-2'
+                  : 'bg-purple-200 shadow-lg hover:shadow-xl'
               }`}
             >
               {/* Card Number Badge */}
