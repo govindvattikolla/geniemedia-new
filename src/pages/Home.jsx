@@ -109,7 +109,7 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:mb-16">
-            <button className="bg-purple-500 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
               Get Started
             </button>
             

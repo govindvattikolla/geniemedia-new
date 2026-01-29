@@ -26,7 +26,13 @@ function App() {
     <BrowserRouter>
       <Header />
 
-      <Suspense fallback={<div className="page-loader m-20">Loading...</div>}>
+          <Suspense
+           fallback={
+         <div className="flex min-h-[40vh] items-center justify-center">
+           <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-purple-600"></div>
+         </div>
+          }
+         >
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about-2" element={<AboutPage/>} />

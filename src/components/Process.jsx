@@ -8,29 +8,29 @@ const ProcessSection = () => {
     {
       id: 1,
       number: '01',
-      title: 'Build context',
-      description: 'We get to know you, your customers, product, industry, and GTM strategy while you get to know our team and process.',
+      title: 'Research & Discovery',
+      description: 'We begin by understanding your brand, audience, and business goals. Through market research, competitor analysis, and customer insights, we uncover opportunities that shape a strong and focused marketing foundation.',
       hasIcon: false
     },
     {
       id: 2,
       number: '02',
-      title: 'Formulate strategy',
-      description: 'We often but not always-start with a tailored strategy built on your context, our proven playbooks, and mutual goals to deliver the right message through the right channels for measurable growth.',
+      title: 'Strategy & Planning',
+      description: 'Next, we build a data-driven marketing roadmap. From positioning and messaging to channel selection and campaign planning, every move is designed to align with your growth objectives.',
       hasIcon: false
     },
     {
       id: 3,
       number: '03',
-      title: 'Craft quality content',
-      description: 'Quality isn\'t accidental. It\'s content purpose-built for your goals, informed by your industry\'s realities, anchored in fresh thinking, and adapted for each channel\'s unique audience.',
+      title: 'Creative & Campaign Execution',
+      description: 'Our team brings ideas to life through compelling content, performance campaigns, and engaging digital experiences. Whether it’s social media, paid ads, SEO, video, or web experiences, we execute with precision and creativity.',
       hasIcon: false
     },
     {
       id: 4,
       number: '04',
-      title: 'Analyze performance',
-      description: 'We set goals together, track progress with your customized dashboard, and analyze results monthly-continuously refining our approach to maximize your investment.',
+      title: 'Optimization & Growth',
+      description: 'We continuously track performance, analyze real-time data, and refine campaigns to improve results. Through testing, optimization, and scaling what works, we ensure sustainable growth and long-term success.',
       hasIcon: false
     }
   ];
@@ -44,7 +44,7 @@ const ProcessSection = () => {
             OUR PROCESS
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6">
-            What can you <span className="italic">expect?</span>
+            Here's how we work
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-xl mb-8">
             Need more details? We're happy to work through them together.
@@ -98,7 +98,7 @@ const ProcessSection = () => {
 
               {/* Title */}
               <h3
-                className={`text-2xl sm:text-3xl lg:text-4xl font-light mb-4 transition-colors duration-500 ${
+                className={`text-2xl sm:text-3xl lg:text-4xl font-md mb-4 transition-colors duration-500 ${
                   hoveredCard === step.id ? 'text-white' : 'text-gray-900'
                 }`}
               >
@@ -108,7 +108,7 @@ const ProcessSection = () => {
               {/* Description */}
               <p
                 className={`text-base sm:text-lg leading-relaxed transition-colors duration-500 ${
-                  hoveredCard === step.id ? 'text-white text-opacity-90' : 'text-gray-600'
+                  hoveredCard === step.id ? 'text-white text-opacity-90' : 'text-gray-700'
                 }`}
               >
                 {step.description}

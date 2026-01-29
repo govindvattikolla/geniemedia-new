@@ -130,7 +130,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
              
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@kkdigitalgrowth.com">
-              <button className=" px-6 py-2.5 text-white bg-purple-600 font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10" >
+              <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10" >
                 <Mail size={16} />
                 Contact Us
               </button>  </a>
