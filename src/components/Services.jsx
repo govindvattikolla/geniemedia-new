@@ -7,10 +7,10 @@ import bird from "../assets/lottie/hummingbird 1.json"
 
 export default function Services1() {
   return (
-    <section className="w-full bg-gray-100 px-6 py-16 md:px-12 lg:px-20 lg:pt-32">
+    <section className="w-full bg-gray-100 px-6 py-12 md:px-12 lg:px-20 lg:pt-28">
       <div className="mx-auto max-w-8xl">
         {/* Top Heading */}
-        <div className="mb-14 max-w-7xl">
+        <div className="mb-10 max-w-7xl text-center">
           <h1 className="font-serif text-4xl leading-tight tracking-tight md:text-6xl">
             Services we offer
           </h1>
@@ -28,7 +28,7 @@ export default function Services1() {
              Digital Marketing
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl leading-snug md:text-6xl">
+            <h2 className="mt-4 font-serif text-2xl leading-snug md:text-6xl">
               Turning Ideas into Impactful Marketing Strategies
             </h2>
 
@@ -38,7 +38,7 @@ export default function Services1() {
             </p>
 
             {/* Pills */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2 lg:gap-3">
               {[
                 "Personal Branding",
                 "Creative Campaigns",
@@ -65,7 +65,7 @@ export default function Services1() {
             <div>
               <span className="text-sm font-semibold opacity-90">/// Unit1</span>
 
-              <h3 className="mt-6 font-serif text-4xl leading-tight">
+              <h3 className="mt-6 font-serif text-3xl leading-tight">
                 Digital Marketing
                 <br />
                 Services
@@ -90,14 +90,14 @@ export default function Services1() {
         </div>
 
         {/* Main Grid2 */}
-        <div className="grid group gap-0 md:grid-cols-3 mt-4 md:mt-12">
+        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
           {/* Left Card */}
           <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
               Web Design & Development
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl leading-snug md:text-6xl">
+            <h2 className="mt-4 font-serif text-2xl leading-snug md:text-6xl">
              Transforming Ideas into Powerful Web Experiences
             </h2>
 
@@ -158,14 +158,14 @@ export default function Services1() {
           </div>
 
           {/* Main Grid3 */}
-        <div className="grid group gap-0 md:grid-cols-3 mt-4 md:mt-12">
+        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
           {/* Left Card */}
           <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-800">
               Production House
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl leading-snug md:text-6xl">
+            <h2 className="mt-4 font-serif text-2xl leading-snug md:text-6xl">
               Transforming Concepts into Captivating Productions
             </h2>
 
@@ -227,14 +227,14 @@ export default function Services1() {
           </div>
 
            {/* Main Grid4 */}
-        <div className="grid group gap-0 md:grid-cols-3 mt-4 md:mt-12">
+        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
           {/* Left Card */}
           <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
               Podcast Studio 
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl leading-snug md:text-6xl">
+            <h2 className="mt-4 font-serif text-2xl leading-snug md:text-6xl">
              Where Great Conversations Come to Life
             </h2>
 

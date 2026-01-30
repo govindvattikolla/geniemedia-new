@@ -263,7 +263,7 @@ const AboutSection1 = () => {
 
       <section 
         ref={sectionRef}
-        className="bg-purple-50 pt-10 px-6 lg:px-12"
+        className="bg-purple-50 pt-10 px-6 lg:px-12 "
         id='about'
       >
         <div className="max-w-6xl mx-auto">

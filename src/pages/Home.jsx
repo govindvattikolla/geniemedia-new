@@ -69,7 +69,7 @@ export default function HeroSection() {
       
 
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-white flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen bg-white flex items-center pt-20 pb-0 overflow-hidden">
         
         {/* Left Character - Lamp */}
         <div className="absolute left-0 sm:left-8 lg:left-0 hidden md:block bottom-5 w-32 sm:w-40 lg:w-48 animate-float">
@@ -80,36 +80,37 @@ export default function HeroSection() {
          
         </div>
 
-        {/* Right Character - Genie */}
-        <div className="absolute right-0 sm:right-8 lg:right-16 bottom-20 w-22 sm:w-24  lg:w-60 animate-float hidden md:block" style={{animationDelay: '1s'}}>
-        
-            {/* <Lottie
-             animationData={hummingBird}
-              loop={true}
-              style={{ width: 300, height: 300 }} /> */}
 
-              <img src="https://img.freepik.com/premium-vector/magic-lamp-genie-icon-logo-template_757387-4967.jpg" alt="lamp" width='400px' height='600px' />
+         {/* Right-top Character - Genie */}
+        {/* <div className="absolute right-0 sm:right-8 lg:right-30 bottom-0 lg:top-40 w-20 sm:w-24  lg:w-60 animate-float hidden md:block" style={{animationDelay: '1s'}}>
+      
+              <img src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1769754292/noun-genie-1005023_noi6wa.png" alt="GENIE" width='250px' height='380px' />
 
-            
+        </div> */}
+
+        {/* Right Character - lamp */}
+        <div className="absolute right-0 sm:right-8 lg:right-12 bottom-36 w-22 sm:w-24  lg:w-72 animate-float hidden md:block" style={{animationDelay: '2s'}}>
         
+              <img src="https://i.pinimg.com/1200x/19/56/be/1956bef68d14f811bfcd8ede085c1b4e.jpg" alt="lamp" width='450px' height='700px' />
+
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-36 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center lg:ml-56">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
             <span className="italic">Smarter Digital Marketing </span>
-            <br />
+            <br/>
             <span className="italic">Stronger Growth.</span>
           </h1>
 
           <p className="text-xl sm:text-2xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-6">
-            Resonate with audiences and algorithms through{' '}
+           From visibility to real business growth, we position your brand as the obvious choice in your market through{' '}
             <TypingText/>
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:mb-16">
-            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
+            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
               Get Started
             </button>
             
@@ -119,9 +120,9 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce ">
-          <ChevronDown className="w-8 h-8 text-gray-400" />
-        </div>
+       <div className="absolute bottom-4 inset-x-0 flex justify-center animate-bounce">
+         <ChevronDown className="w-8 h-8 text-gray-400" />
+       </div>
       </section>
 
       <AboutSection1/>

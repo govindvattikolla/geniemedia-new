@@ -71,7 +71,7 @@ export default function Projects() {
                     
                     rounded-full
                     bg-purple-500
-                    text-black
+                    text-white
                     text-sm sm:text-base    
                     font-semibold
                     hover:bg-gray-900

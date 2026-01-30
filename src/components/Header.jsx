@@ -75,7 +75,7 @@ const Header = () => {
                 >
                   <a
                     href={item.href}
-                    className="nav-link flex items-center gap-1 text-m font-semibold text-gray-900 hover:text-purple-600 py-1 text-base"
+                    className="nav-link flex items-center gap-1  font-semibold text-gray-900 hover:text-purple-600 py-1 text-lg"
                   >
                     {item.name}
                     {item.dropdown && (
@@ -116,7 +116,7 @@ const Header = () => {
                           "
                         >
                           <span className="text-2xl">{subItem.icon}</span>
-                          <span className="text-sm font-medium">{subItem.name}</span>
+                          <span className="text-base font-medium">{subItem.name}</span>
                         </a>
                       ))}
                     </div>
@@ -130,7 +130,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
              
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@kkdigitalgrowth.com">
-              <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-sm flex items-center gap-2 shadow-lg relative z-10" >
+              <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-md flex items-center gap-2 shadow-lg relative z-10" >
                 <Mail size={16} />
                 Contact Us
               </button>  </a>

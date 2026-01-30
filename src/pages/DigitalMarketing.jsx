@@ -238,7 +238,7 @@ export default function DigitalMarketting() {
       <div className="lg:col-span-4 space-y-12 sm:space-y-16">
         {leftServices.map((service, index) => (
           <div key={index} className="space-y-4">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            <h3 className="text-xl sm:text-3xl font-bold text-gray-900">
               {service.title}
             </h3>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -290,7 +290,7 @@ export default function DigitalMarketting() {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-16">
           <div className="flex-1">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
+            <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
               Our Marketing Expertise Across Industries
             </h2>
             <p className="text-lg md:text-xl text-gray-800 leading-relaxed max-w-3xl">
@@ -337,7 +337,7 @@ export default function DigitalMarketting() {
 
                 {/* Title with Arrow */}
                 <div className="flex items-center gap-2 mb-4">
-                  <h3 className="text-3xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900">
                     {industry.title}
                   </h3>
                   <ArrowUpRight className="w-6 h-6 text-gray-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -396,7 +396,7 @@ export default function DigitalMarketting() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Column - Content */}
           <div className="lg:sticky lg:top-24">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Why Choose Genie Media as Your Marketing Agency?
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -436,7 +436,7 @@ export default function DigitalMarketting() {
                         </svg>
                       </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                    <h3 className="text-md md:text-2xl font-bold text-gray-900">
                       {item.title}
                     </h3>
                   </div>
