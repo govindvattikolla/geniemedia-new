@@ -27,19 +27,19 @@ const ContentMarketing = () => {
   }, []);
 
   const oldWayItems = [
-    { icon: Frown, text: 'Brand voices matter most' },
-    { icon: UserX, text: 'Channels were for promoting anchor assets' },
-    { icon: FileText, text: 'Keyword stuffing for SEO' },
-    { icon: FileText, text: 'Content = Blog' },
-    { icon: PenTool, text: 'Handwritten' }
+    { icon: Frown, text: 'Brands spoke. Audiences listened.' },
+    { icon: UserX, text: 'Channels existed to push traffic to a single “big” asset' },
+    { icon: FileText, text: 'SEO meant keyword stuffing and rankings' },
+    { icon: FileText, text: 'Content = Blog and landing pages' },
+    { icon: PenTool, text: 'Manual, slow, intuition-driven' }
   ];
 
   const newWayItems = [
-    { icon: Smile, text: 'Spokespeople matter most' },
-    { icon: Users, text: 'Channels require zero-click approaches' },
-    { icon: TrendingUp, text: 'SEO 🤝 AEOI' },
-    { icon: Video, text: 'Content = Multimedia' },
-    { icon: Sparkles, text: 'AI-Assisted' }
+    { icon: Smile, text: 'People and creators build trust, not logos' },
+    { icon: Users, text: 'Channels are destinations-optimized for zero-click discovery' },
+    { icon: TrendingUp, text: 'SEO 🤝 AEO 🤝 GEO (Search, Answer & Generative Engines)' },
+    { icon: Video, text: 'Content = video, audio, social, search, and AI surfaces' },
+    { icon: Sparkles, text: 'AI-assisted, data-driven, always-on' }
   ];
 
   return (
