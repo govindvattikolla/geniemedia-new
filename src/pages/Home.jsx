@@ -110,7 +110,7 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
-            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300">
+            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4">
               Get Started
             </button>
             
@@ -120,7 +120,7 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-       <div className="absolute bottom-4 inset-x-0 flex justify-center animate-bounce">
+       <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
          <ChevronDown className="w-8 h-8 text-gray-400" />
        </div>
       </section>

@@ -10,9 +10,9 @@ export default function PodcastStudio() {
 
 
   // Smooth scroll behavior
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }, []);
+  // useEffect(() => {
+  //   document.documentElement.style.scrollBehavior = "smooth";
+  // }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -20,74 +20,43 @@ export default function PodcastStudio() {
     window.open("https://wa.me/919032845433", "_blank");
   
 
-  // Intersection Observers (converted)
+  
   useEffect(() => {
-    const options1 = { threshold: 0.3 };
-    const observer1 = new IntersectionObserver((entries) => {
-      entries.forEach((entry) =>
-        entry.target.classList.toggle("animate", entry.isIntersecting)
-      );
-    }, options1);
-
-    const content = document.querySelector(".content");
-    const visual = document.querySelector(".visual");
-    if (content) observer1.observe(content);
-    if (visual) observer1.observe(visual);
-
-    // Studio section animation
-    const options2 = { threshold: 0.05, rootMargin: "120px 0px" };
-    const observer2 = new IntersectionObserver((entries) => {
-      entries.forEach((entry) =>
-        entry.target.classList.toggle("animate", entry.isIntersecting)
-      );
-    }, options2);
-
-    const elementsToAnimate = document.querySelectorAll(
-      ".studio-header, .studio-image, .floating-actions"
-    );
-    elementsToAnimate.forEach((el) => observer2.observe(el));
-
-    requestAnimationFrame(() => {
-      const section = document.querySelector(".studio-section");
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-          elementsToAnimate.forEach((el) => el.classList.add("animate"));
-        }
-      }
-    });
-
-    // Furniture cards animation
-    const options3 = { threshold: 0.2 };
-    const observer3 = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("sbf-show");
-          obs.unobserve(entry.target);
+          entry.target.classList.add("animate");
+          obs.unobserve(entry.target); // 🔥 stop observing
         }
       });
-    }, options3);
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "100px 0px",
+    }
+  );
 
-    document.querySelectorAll(".sbf-card").forEach((card) => {
-      observer3.observe(card);
-    });
+  document
+    .querySelectorAll(
+      ".content, .visual, .studio-header, .studio-image, .floating-actions, .sbf-card, .testimonial-card, .testimonial-cta, .sbf-section"
+    )
+    .forEach(el => observer.observe(el));
 
-    // Testimonials animation
-    const options4 = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-    const observer4 = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("animate");
-      });
-    }, options4);
+  return () => observer.disconnect();
+}, []);
 
-   
-    const tCards = document.querySelectorAll(".testimonial-card");
-    const tCta = document.querySelector(".testimonial-cta");
+const videoRef = React.useRef(null);
 
-   
-    tCards.forEach((c) => observer4.observe(c));
-    if (tCta) observer4.observe(tCta);
-  }, []);
+useEffect(() => {
+  const t = setTimeout(() => {
+    videoRef.current?.play();
+  }, 1200); // play AFTER page settles
+
+  return () => clearTimeout(t);
+}, []);
+
+
 
   return (
     <div>
@@ -95,9 +64,20 @@ export default function PodcastStudio() {
 
       {/* HERO SECTION */}
       <section className="hero">
-        <video autoPlay muted loop playsInline className="hero-bg-video">
-          <source src= 'https://res.cloudinary.com/dcnwphnzn/video/upload/v1766472614/podcast_clip_jhfw5o.mp4' type="video/mp4" loading='lazy' /> 
-        </video>
+       <video
+         muted
+         loop
+         playsInline
+         preload="none"
+         className="hero-bg-video"
+         ref={videoRef}
+       >
+         <source
+           src="https://res.cloudinary.com/dcnwphnzn/video/upload/v1766472614/podcast_clip_jhfw5o.mp4"
+           type="video/mp4"
+         />
+       </video>
+
 
         <div className="bg-gradient bg-gradient-1"></div>
         <div className="bg-gradient bg-gradient-2"></div>
@@ -133,15 +113,15 @@ export default function PodcastStudio() {
 
         <div className="marquee-container">
           <div className="marquee-track">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 1" loading='lazy'/>
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg' alt="Podcast 2" loading='lazy'/>
-            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studioSet-min_yqhydl.jpg' alt="Podcast 3" loading='lazy'  />
-            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/studio-light2-min_gcgzj2.jpg' alt="Podcast 4" loading='lazy' />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472598/podcast-cameras_mzeqzl.jpg' alt="Podcast 5" loading='lazy' />
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 1" loading='lazy' decoding="async"/>
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg' alt="Podcast 2" loading='lazy' decoding="async"/>
+            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studioSet-min_yqhydl.jpg' alt="Podcast 3" loading='lazy' decoding="async" />
+            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/studio-light2-min_gcgzj2.jpg' alt="Podcast 4" loading='lazy' decoding="async" />
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472598/podcast-cameras_mzeqzl.jpg' alt="Podcast 5" loading='lazy' decoding="async" />
 
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/podcast-chair_efyzne.jpg' alt="Podcast 1" loading='lazy' />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 3" loading='lazy' />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studio-set2-min_j5xye3.jpg' alt="Podcast 4" loading='lazy'  />
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/podcast-chair_efyzne.jpg' alt="Podcast 1" loading='lazy' decoding="async" />
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 3" loading='lazy' decoding="async" />
+            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studio-set2-min_j5xye3.jpg' alt="Podcast 4" loading='lazy' decoding="async" />
           </div>
         </div>
       </section>

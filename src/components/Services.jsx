@@ -23,7 +23,7 @@ export default function Services1() {
         {/* Main Grid1 */}
         <div className="grid group gap-0 md:grid-cols-3">
           {/* Left Card */}
-          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
+          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12 order-2 lg:order1">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
              Digital Marketing
             </span>
@@ -61,7 +61,7 @@ export default function Services1() {
 
           
           {/* Right Card */}
-          <div className="relative flex flex-col justify-between bg-purple-500 p-8 md:p-10 text-white">
+          <div className="relative flex flex-col justify-between bg-purple-500 p-8 md:p-10 text-white order-1 lg:order-2">
             <div>
               <span className="text-sm font-semibold opacity-90">/// Unit1</span>
 
@@ -90,9 +90,9 @@ export default function Services1() {
         </div>
 
         {/* Main Grid2 */}
-        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
+        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12 ">
           {/* Left Card */}
-          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
+          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12 order-2 lg:order-1">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
               Web Design & Development
             </span>
@@ -130,7 +130,7 @@ export default function Services1() {
 
           
           {/* Right Card */}
-          <div className="relative flex flex-col justify-between bg-orange-400 p-8 md:p-10 text-white">
+          <div className="relative flex flex-col justify-between bg-orange-400 p-8 md:p-10 text-white order-1 lg:order-2">
             <div>
               <span className="text-sm font-semibold opacity-90">/// Unit2</span>
 
@@ -160,7 +160,7 @@ export default function Services1() {
           {/* Main Grid3 */}
         <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
           {/* Left Card */}
-          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
+          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12 order-2 lg:order-1">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-800">
               Production House
             </span>
@@ -199,7 +199,7 @@ export default function Services1() {
 
           
           {/* Right Card */}
-          <div className="relative flex flex-col justify-between bg-purple-500 p-8 md:p-10 text-white">
+          <div className="relative flex flex-col justify-between bg-purple-500 p-8 md:p-10 text-white order-1 lg:order-2">
             <div>
               <span className="text-sm font-semibold opacity-90">/// Unit3</span>
 
@@ -227,9 +227,9 @@ export default function Services1() {
           </div>
 
            {/* Main Grid4 */}
-        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12">
+        <div className="grid group gap-0 md:grid-cols-3 mt-8 md:mt-12 ">
           {/* Left Card */}
-          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12">
+          <div className="md:col-span-2  border border-gray-200 bg-white p-8 md:p-12 order-2 lg:order-1">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-700">
               Podcast Studio 
             </span>
@@ -266,7 +266,7 @@ export default function Services1() {
 
           
           {/* Right Card */}
-          <div className="relative flex flex-col justify-between bg-orange-400 p-8 md:p-10 text-white">
+          <div className="relative flex flex-col justify-between bg-orange-400 p-8 md:p-10 text-white order-1 lg:order-2">
             <div>
               <span className="text-sm font-semibold opacity-90">/// Unit4</span>
 

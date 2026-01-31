@@ -29,7 +29,7 @@ export default function Projects() {
 
       <section className="relative py-10 bg-white overflow-hidden border-y-2">
             
-            <h2 className="text-center text-4xl font-bold mb-16">
+            <h2 className="text-center text-2xl font-bold mb-12">
               Platforms we use for Web Development
             </h2>
       
@@ -57,7 +57,7 @@ export default function Projects() {
       
             
             <div className="max-w-4xl mx-auto text-center px-4">
-              <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed mb-8">
+              <p className="text-xl md:text-xl font-semibold text-gray-800 leading-relaxed mb-6">
                 If you're looking for an agency that elevates your brand with creativity,
                 strategy, and innovation, then you’re ready for us.
               </p>

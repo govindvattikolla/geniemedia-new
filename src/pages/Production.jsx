@@ -45,7 +45,7 @@ export default function ProductionHouse() {
             
                    <p
                      className="
-                       text-lg tracking-widest text-purple-600 font-semibold mb-6
+                       text-lg tracking-widest text-purple-600 font-semibold mb-2
                        animate-fadeUp
                      "
                    >
@@ -57,7 +57,7 @@ export default function ProductionHouse() {
                      className="
                        text-2xl md:text-5xl lg:text-5xl 
                        font-extrabold leading-tight text-gray-900
-                       mb-8 animate-fadeUp animation-delay-200
+                       mb-6 animate-fadeUp animation-delay-200
                      "
                    >
                  {/* Marketing That Connects, Engages & Converts */}
@@ -69,7 +69,7 @@ export default function ProductionHouse() {
                    <p
                      className="
                        max-w-5xl mx-auto text-lg sm:text-[22px] text-gray-600
-                       leading-relaxed mb-12
+                       leading-relaxed mb-8
                        animate-fadeUp animation-delay-400
                      "
                    >

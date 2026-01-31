@@ -57,14 +57,14 @@ export default function ServicesSection2() {
   ];
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 overflow-hidden" id='services'>
+    <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 overflow-hidden" id='services'>
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
       
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-10 relative">
           <div className="inline-block">
             <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider mb-2 block">What We Offer</span>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 relative">
@@ -131,20 +131,20 @@ export default function ServicesSection2() {
         </div>
 
         {/* CTA Section */}
-        <div className="relative bg-gradient-to-r from-purple-400 to-purple-500 rounded-3xl p-12 md:p-16 text-center overflow-hidden">
+        <div className="relative bg-gradient-to-r from-purple-400 to-purple-500 rounded-3xl p-12  md:p-16 text-center overflow-hidden">
           {/* Decorative Circles */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-32 -translate-y-32"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full translate-x-32 translate-y-32"></div>
           
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <h3 className="text-xl md:text-4xl font-bold text-white mb-4">
               Ready to Transform Your Digital Presence?
             </h3>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Let's collaborate to create something extraordinary that drives real results for your business
             </p>
             <button 
-              className="bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-white/50 inline-flex items-center gap-3 group"
+              className="bg-white text-black px-10 py-5 rounded-full font-bold text-md hover:bg-gray-100 transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-white/50 inline-flex items-center gap-3 group"
               onClick={() => window.location.href="https://wa.me/919032845433"}
             >
               <span>Start Your Project</span>
@@ -168,7 +168,7 @@ export default function ServicesSection2() {
               <div className="text-4xl md:text-5xl font-bold bg-black bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
-              <div className="text-purple-600 font-medium">
+              <div className="text-purple-600 font-medium text-sm">
                 {stat.label}
               </div>
             </div>

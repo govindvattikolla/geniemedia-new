@@ -58,14 +58,14 @@ export default function ProductionHouseServices() {
   ];
 
   return (
-    <div className="relative bg-gray-200 py-16 sm:py-20 lg:py-18 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative bg-gray-200 py-12 sm:py-20 lg:py-18 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
      
 
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16 sm:mb-20 space-y-6">
+        <div className="text-center mb-12 sm:mb-20 space-y-6">
           <div className="inline-block">
             <span className="px-4 py-2 bg-purple-500 bg-opacity-50 text-black rounded-full text-sm font-semibold border border-orange-500 border-opacity-30">
               Our Expert-led Services

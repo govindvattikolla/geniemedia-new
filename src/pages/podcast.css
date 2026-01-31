@@ -1151,7 +1151,7 @@
 
 
 /* ---- Section styles (namespace: sbf-) ---- */
-    .sbf-section { padding: 0px 0px 20px; background: #f1f1f1; margin-top: -40px; }
+    .sbf-section { padding: 0px 0px 30px; background: #f1f1f1; margin-top: -40px; }
     .sbf-grid {
       max-width: 1360px;
       margin: 0 auto;
@@ -1173,7 +1173,7 @@
       border-radius: 18px;
       overflow: visible;
       transform: translateY(30px);
-      opacity: 0;
+      opacity: 1;
       transition: transform .7s cubic-bezier(.2,.9,.2,1), opacity .7s ease;
     }
 
@@ -1567,9 +1567,10 @@
             }
 
             .cta-button {
-                padding: 16px 40px;
+                padding: 10px 16px;
                 width: 100%;
                 max-width: 300px;
+                font-size: 12px;
             }
         }
 
