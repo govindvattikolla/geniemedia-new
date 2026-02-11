@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './podcast.css'
+import PodcastStudioBooking from "../components/BookPodcast";
 
 
 
@@ -248,6 +249,8 @@ useEffect(() => {
           </figure>
         </div>
       </section>
+
+      <PodcastStudioBooking/>
 
       {/* TESTIMONIAL SECTION */}
       <section className="testimonial-section" id="reviews">

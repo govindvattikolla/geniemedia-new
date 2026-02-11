@@ -91,7 +91,7 @@ export default function HeroSection() {
         {/* Right Character - lamp */}
         <div className="absolute right-0 sm:right-8 lg:right-12 bottom-36 w-22 sm:w-24  lg:w-72 animate-float hidden md:block" style={{animationDelay: '2s'}}>
         
-              <img src="https://i.pinimg.com/1200x/19/56/be/1956bef68d14f811bfcd8ede085c1b4e.jpg" alt="lamp" width='450px' height='700px' />
+              <img src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1769853809/genie-image_se78s9.jpg" alt="lamp" width='450px' height='700px' />
 
         </div>
 
