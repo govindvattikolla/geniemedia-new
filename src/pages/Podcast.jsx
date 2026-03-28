@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import './podcast.css'
 import PodcastStudioBooking from "../components/BookPodcast";
+import cameras from '../assets/podcast/podcast-cameras.JPG';
+import chairs from '../assets/podcast/podcast-chair.JPG';
+import mics from '../assets/podcast/podcast-mic.JPG';
+import output from '../assets/podcast/podcast-output.JPG';
+import light from '../assets/podcast/studio-light2-min.JPG';
+import set2 from '../assets/podcast/studio-set2-min.JPG';
+import nytview from '../assets/podcast/StudioNightView-min.JPG';
+import set from '../assets/podcast/studioSet-min.JPG';
 
 
 
 
 export default function PodcastStudio() {
   
-
-
-
-  // Smooth scroll behavior
-  // useEffect(() => {
-  //   document.documentElement.style.scrollBehavior = "smooth";
-  // }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -65,7 +66,7 @@ useEffect(() => {
 
       {/* HERO SECTION */}
       <section className="hero">
-       <video
+       <video src="https://karthik.kkdigitalgrowth.com/wp-content/uploads/2026/03/podcast_clip.mp4"
          muted
          loop
          playsInline
@@ -73,10 +74,7 @@ useEffect(() => {
          className="hero-bg-video"
          ref={videoRef}
        >
-         <source
-           src="https://res.cloudinary.com/dcnwphnzn/video/upload/v1766472614/podcast_clip_jhfw5o.mp4"
-           type="video/mp4"
-         />
+        
        </video>
 
 
@@ -114,15 +112,15 @@ useEffect(() => {
 
         <div className="marquee-container">
           <div className="marquee-track">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 1" loading='lazy' decoding="async"/>
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg' alt="Podcast 2" loading='lazy' decoding="async"/>
-            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studioSet-min_yqhydl.jpg' alt="Podcast 3" loading='lazy' decoding="async" />
-            <img src=  'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/studio-light2-min_gcgzj2.jpg' alt="Podcast 4" loading='lazy' decoding="async" />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472598/podcast-cameras_mzeqzl.jpg' alt="Podcast 5" loading='lazy' decoding="async" />
+            <img src= {mics} alt="Podcast 1" loading='lazy' decoding="async"/>
+            <img src= {nytview} alt="Podcast 2" loading='lazy' decoding="async"/>
+            <img src=  {set} alt="Podcast 3" loading='lazy' decoding="async" />
+            <img src=  {light} alt="Podcast 4" loading='lazy' decoding="async" />
+            <img src= {cameras} alt="Podcast 5" loading='lazy' decoding="async" />
 
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/podcast-chair_efyzne.jpg' alt="Podcast 1" loading='lazy' decoding="async" />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Podcast 3" loading='lazy' decoding="async" />
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studio-set2-min_j5xye3.jpg' alt="Podcast 4" loading='lazy' decoding="async" />
+            <img src= {chairs} alt="Podcast 1" loading='lazy' decoding="async" />
+            <img src= {mics} alt="Podcast 3" loading='lazy' decoding="async" />
+            <img src= {set2} alt="Podcast 4" loading='lazy' decoding="async" />
           </div>
         </div>
       </section>
@@ -183,7 +181,7 @@ useEffect(() => {
 
             <div className="studio-image large">
               <img
-                src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studio-set2-min_j5xye3.jpg'
+                src= {set2}
                 alt="Red Studio Setup"
                 loading='lazy'
               />
@@ -193,7 +191,7 @@ useEffect(() => {
           <div className="right-column">
             <div className="studio-image small">
               <img
-                src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg'
+                src= {nytview}
                 alt="Studio Setup"
                 loading='lazy'
               />
@@ -201,7 +199,7 @@ useEffect(() => {
 
             <div className="studio-image small">
               <img
-                src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/studio-light2-min_gcgzj2.jpg'
+                src= {light}
                 alt="Studio Setup"
                 loading='lazy'
               />
@@ -219,12 +217,12 @@ useEffect(() => {
 
         <div className="furniture-container">
           <div className="furniture-item">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/studio-set2-min_j5xye3.jpg'  alt="Studio Set" loading='lazy' />
+            <img src= {set2}  alt="Studio Set" loading='lazy' />
             <p className="item-text">1 x complete podcast setup</p>
           </div>
 
           <div className="furniture-item">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472600/podcast-mic_otl8dg.jpg' alt="Mics" loading='lazy' />
+            <img src= {mics} alt="Mics" loading='lazy' />
             <p className="item-text">2 x high-quality mic</p>
           </div>
         </div>
@@ -234,17 +232,17 @@ useEffect(() => {
       <section className="sbf-section">
         <div className="sbf-grid">
           <figure className="sbf-card sbf-left">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472598/podcast-cameras_mzeqzl.jpg' loading='lazy' alt="Camera" />
+            <img src= {cameras} loading='lazy' alt="Camera" />
             <figcaption>3 x high-quality camera</figcaption>
           </figure>
 
           <figure className="sbf-card sbf-right">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472605/podcast-output_jfrcba.jpg' loading='lazy' alt="Output" />
+            <img src= {output} loading='lazy' alt="Output" />
             <figcaption>4 x excellent output</figcaption>
           </figure>
 
           <figure className="sbf-card sbf-bottom">
-            <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg' loading='lazy' alt="Premium" />
+            <img src= {nytview} loading='lazy' alt="Premium" />
             <figcaption>5 x premium look set</figcaption>
           </figure>
         </div>

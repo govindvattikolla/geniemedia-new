@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronUp, ChevronRight, ArrowUpRight } from 'lucide-react
 import ServicesSection2 from '../components/WebServices';
 import ProjectsSection from '../components/ProjectsSec';
 import VideoTestimonials from '../components/testimonials';
+import Webservices from '../assets/web_services_hero.JPG'
 
 
 export default function WebDevPg() {
@@ -126,8 +127,8 @@ export default function WebDevPg() {
               <div className="relative">
                 <div className="absolute inset-0 bg-cyan-400 opacity-20 blur-3xl rounded-full"></div>
                 <img 
-                  src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/web_services_hero_vemypd.avif'
-                  alt="webdev" 
+                  src= {Webservices}
+                  alt="webdevelopment services" 
                   className="relative rounded-2xl shadow-2xl w-full max-w-lg lg:max-w-2xl object-cover"
                   loading='lazy'
                 />
@@ -186,7 +187,7 @@ export default function WebDevPg() {
                  >
                   
                  </div>
-                 <video src='https://res.cloudinary.com/dcnwphnzn/video/upload/v1766472616/WebsiteVideo_2_v0dsyn.mp4' muted autoPlay loop className='w-full h-auto rounded-xl'></video> 
+                 <video src='https://karthik.kkdigitalgrowth.com/wp-content/uploads/2026/03/WebsiteVideo_2.mp4' muted autoPlay loop className='w-full h-auto rounded-xl'></video> 
          
                </div>
              </section>

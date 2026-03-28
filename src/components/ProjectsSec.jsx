@@ -1,4 +1,9 @@
-
+import meerabasu from '../assets/meerabasuWebsite.png'
+import avantta from '../assets/AvanttaGems.png'
+import kns from '../assets/knsMetals.png'
+import laserfold from '../assets/LaserFold.png'
+import genie from '../assets/GenieStudio.png'
+import buildzone from '../assets/buildzon.png'
 
 const ProjectsSection = () => {
  
@@ -7,32 +12,32 @@ const ProjectsSection = () => {
 const projects = [
   {
     name: "Meera Basu",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472599/meerabasuWebsite_l7hogy.png',
+    image: meerabasu,
       url: "https://meerabasu.co.in/"
   },
   {
     name: "Avantta Gems",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/AvanttaGems_ev34lv.png',
+    image: avantta,
       url: "https://8z2bgt-68.myshopify.com/"
   },
   {
     name: "KNS Metal Solutions",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472599/knsMetals_nxysu0.png',
+    image: kns,
       url: "https://knsmetalsolutions.com.au/"
   },
   {
     name: "Laserfold",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/LaserFold_odqvne.png',
+    image: laserfold,
       url: "https://laserfold.com.au/"
   },
   {
     name: "GenieStudio",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/GenieStudio_kn1fhj.png',
+    image: genie,
       url: "https://geniestudio.in/"
   },
   {
     name: "Buildzone",
-    image: 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472604/buildzon_ktmkrc.png',
+    image: buildzone,
       url: "https://www.buildzonprojects.com/"
   }
 ];

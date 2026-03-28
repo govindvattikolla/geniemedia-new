@@ -1,6 +1,8 @@
 import React from 'react'
 import ProductionHouseServices from '../components/ProductionServices'
 import ContactSec from '../components/Contact'
+import Studio from '../assets/StudioNightView-min.JPG'
+import cams from '../assets/Production-House-cams.jpg'
 
 
 
@@ -27,7 +29,7 @@ export default function ProductionHouse() {
               <div className="relative">
                 <div className="absolute inset-0 bg-cyan-400 opacity-20 blur-3xl rounded-full"></div>
                 <img 
-                  src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472603/StudioNightView-min_qhb4dq.jpg'
+                  src= {Studio}
                   alt="studio" 
                   className="relative rounded-2xl shadow-2xl w-full max-w-lg lg:max-w-2xl object-cover"
                   loading='lazy'
@@ -89,7 +91,7 @@ export default function ProductionHouse() {
                    >
                     
                    </div>
-                   <img src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766482735/Production-House-cams_ippeae.jpg' loading='lazy' className='w-full h-auto rounded-xl'/>
+                   <img src={cams} loading='lazy' className='w-full h-auto rounded-xl'/>
             
                  </div>
                </section>

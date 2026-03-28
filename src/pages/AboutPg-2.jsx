@@ -5,6 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 import AboutSection1 from '../components/AboutSec';
 import VideoTestimonials from '../components/testimonials';
+import ourvision from '../assets/our-vision2.jpg'
+import ourmission from '../assets/ourMission.jpg'
+import aboutHero from '../assets/about_hero.jpg'
 
 
 
@@ -83,8 +86,8 @@ export default function AboutPage2() {
               <div className="relative">
                 <div className="absolute inset-0 bg-cyan-400 opacity-20 blur-3xl rounded-full"></div>
                 <img 
-                  src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1766475672/about_hero_farnyn.webp"
-                  alt="Robot hand" 
+                  src={aboutHero}
+                  alt="Digital marketing concept with global network, data analytics icons, and business growth arrow on laptop and tablet" 
                   className="relative rounded-2xl shadow-2xl w-full max-w-lg lg:max-w-2xl object-cover"
                   loading='lazy'
                 />
@@ -148,8 +151,8 @@ export default function AboutPage2() {
         `}
       >
         <img
-          src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/our-vision2_l2hb27.jpg'
-          alt=" services diagram"
+          src={ourvision}
+          alt=" Digital marketing vision concept with data analytics dashboard, growth charts, SEO tools, and futuristic technology illustration"
           className="w-{350px} h-auto rounded-2xl"
           loading='lazy'
         />
@@ -193,9 +196,9 @@ export default function AboutPage2() {
         ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
       >
         <img
-          src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/ourMission_ur7j6b.jpg'
-          alt="services diagram"
-          className="w-{350px} h-auto rounded-2xl "
+          src={ourmission}
+          alt="Digital marketing mission concept showing business partnership handshake, innovation ideas, and collaborative growth strategy"
+          className="w-{320px} h-auto rounded-2xl "
           loading='lazy'
         />
       </div>

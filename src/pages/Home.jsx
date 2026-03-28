@@ -11,6 +11,7 @@ import ProcessSection from '../components/Process';
 import VideoTestimonials from '../components/testimonials';
 import ContactSec from '../components/Contact';
 import { TypingText } from '../components/TypingEff';
+import Genieimg from '../assets/genie-image.jpg'
 
 
 export default function HeroSection() {
@@ -91,12 +92,12 @@ export default function HeroSection() {
         {/* Right Character - lamp */}
         <div className="absolute right-0 sm:right-8 lg:right-12 bottom-36 w-22 sm:w-24  lg:w-72 animate-float hidden md:block" style={{animationDelay: '2s'}}>
         
-              <img src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1769853809/genie-image_se78s9.jpg" alt="lamp" width='450px' height='700px' />
+              <img src={Genieimg} alt="lamp" width='450px' height='700px' />
 
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center lg:ml-56">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center lg:ml-44">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
             <span className="italic">Smarter Digital Marketing </span>
             <br/>

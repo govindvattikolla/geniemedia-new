@@ -4,12 +4,12 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube } from 'luc
 
 export default function Footer() {
   const services = [
-  { title: "Digital Marketing", link: "/digital_marketing" },
-  { title: "Web Development", link: "/web_development" },
-  { title: "UI/UX Design", link: "/web_development" },
-  { title: "Content Creation", link: "/digital_marketing" },
-  { title: "Production", link: "/production_house" },
-  { title: "Podcast Studio", link: "/podcast_studio" }
+  { title: "Digital Marketing", link: "/digitalMarketing" },
+  { title: "Web Development", link: "/webDevelopment" },
+  { title: "UI/UX Design", link: "/webDevelopment" },
+  { title: "Content Creation", link: "/digitalMarketing" },
+  { title: "Production House", link: "/productionHouse" },
+  { title: "Podcast Studio", link: "/podcastStudio" }
 ];
 
 const company = [
@@ -22,9 +22,8 @@ const company = [
 ];
 
  
-
   return (
-    <footer className="bg-gray-50 text-gray-900">
+    <footer className="bg-gray-50 text-gray-900 ">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -44,9 +43,9 @@ const company = [
                 <Facebook className="w-5 h-5" />
               </a>
               
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+              {/* <a href="#" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
-              </a>
+              </a> */}
               <a href="https://www.instagram.com/itsgeniemedia_official/" className="w-10 h-10 rounded-full bg-slate-200 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
                 <Instagram className="w-5 h-5" />
               </a>

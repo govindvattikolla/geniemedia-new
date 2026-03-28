@@ -4,6 +4,10 @@ import React from 'react'
 import ContactSec from '../components/Contact'
 import ProjectsSection from '../components/ProjectsSec'
 import VideoTestimonials from '../components/testimonials'
+import shopify from '../assets/shopify.webp'
+import wordpress from '../assets/wordpress.png'
+import coding from '../assets/code.png'
+
 
 export default function Projects() {
 
@@ -36,20 +40,20 @@ export default function Projects() {
            
             <div className="flex flex-col md:flex-row items-center justify-center gap-20 mb-12">
               <img
-                src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472592/wordpress_an7yvu.png'
-                alt="WordPress"
+                src={wordpress}
+                alt="WordPress-logo"
                 className="w-28 md:w-32 hover:scale-110 transition-transform duration-300 -mb-8"
                 loading='lazy'
               />
               <img
-                src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/shopify_gf5ybx.webp'
-                alt="Shopify"
+                src={shopify}
+                alt="Shopify-logo"
                 className="w-36 md:w-42 hover:scale-110 transition-transform duration-300 -mb-8"
                 loading='lazy'
               />
               <img
-                src='https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472592/code_l9yflq.jpg'
-                alt="code"
+                src={coding}
+                alt="we build websites on coding(both front-end and backend)"
                 className="w-36 md:w-48 hover:scale-110 transition-transform duration-300"
                 loading='lazy'
               />

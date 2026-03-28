@@ -3,6 +3,9 @@
 
 import {ChevronRight, ArrowUpRight, ChevronLeft, ChevronUp} from 'lucide-react';
 import {React, useState} from 'react'
+import DigitalMar from '../assets/DigitalMarketting.jpg'
+import DigitalMar2 from '../assets/DigitalMarketing2.jpg'
+import DMservices from '../assets/DM_services.jpg'
 
 export default function DigitalMarketting() {
 
@@ -162,7 +165,7 @@ export default function DigitalMarketting() {
               <div className="relative">
                 <div className="absolute inset-0 bg-cyan-400 opacity-20 blur-3xl rounded-full"></div>
                 <img 
-                  src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/DigitalMarketting_bdrlfm.jpg'
+                  src= {DigitalMar}
                   loading='lazy'
                   alt="Robot hand" 
                   className="relative rounded-2xl shadow-2xl w-full max-w-lg lg:max-w-2xl object-cover"
@@ -223,7 +226,7 @@ export default function DigitalMarketting() {
              >
               
              </div>
-             <img src= 'https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472593/DigitalMarketing2_ueo6rz.jpg' loading='lazy' className='w-full h-auto rounded-xl'/>
+             <img src= {DigitalMar2} loading='lazy' className='w-full h-auto rounded-xl'/>
       
            </div>
          </section>
@@ -258,7 +261,7 @@ export default function DigitalMarketting() {
           {/* Image Card */}
           <div className="relative bg-purple-300 rounded-3xl p-8 shadow-2xl">
             <img
-              src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1766472594/DM_services_p95xq2.jpg"
+              src={DMservices} 
               alt="Digital Marketing Analytics"
               className="w-full h-auto rounded-2xl object-cover"
               loading='lazy'
