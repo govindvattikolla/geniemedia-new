@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, Globe } from 'lucide-react';
-import SEO from './meta-info';
+
 
 const ContactSec = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -88,10 +88,8 @@ const ContactSec = () => {
   return (
     <>
 
-     <SEO title="Contact GenieMedia | Digital Marketing Agency in Visakhapatnam"
-        description="Get in touch with GenieMedia, a leading digital marketing agency in Visakhapatnam. Reach out for SEO, social media marketing, PPC, web development, or creative services to grow your business online."
-     /> 
-     
+    
+
       <style>{`
         @keyframes fadeInUp {
           from {

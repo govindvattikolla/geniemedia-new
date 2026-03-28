@@ -25,7 +25,8 @@ export default function Reviews() {
   return (
    <>
 
-      <SEO ttitle="Client Reviews & Testimonials | GenieMedia, Visakhapatnam"
+      <SEO
+       tittle=" Client Reviews & Testimonials | GenieMedia, Visakhapatnam"
          description="Read real client reviews and testimonials for GenieMedia, a trusted digital marketing agency in Visakhapatnam delivering SEO, social media, PPC, web development, and creative solutions."
        />
 
