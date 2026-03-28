@@ -3,12 +3,17 @@ import ProductionHouseServices from '../components/ProductionServices'
 import ContactSec from '../components/Contact'
 import Studio from '../assets/StudioNightView-min.JPG'
 import cams from '../assets/Production-House-cams.jpg'
+import SEO from '../components/meta-info'
 
 
 
 export default function ProductionHouse() {
   return (
     <>
+     <SEO title="Video Production & Creative Studio in Visakhapatnam | GenieMedia"
+  description="GenieMedia’s production house in Visakhapatnam offers professional video production, editing, and creative content services to help brands tell their story and engage audiences."
+   />
+   
       <div className="text-center bg-gradient-to-br 
         from-slate-900 via-slate-800 to-slate-900 
         px-4 sm:px-6 lg:px-16 pt-28 mt-12 sm:pt-24 pb-12 sm:pb-12 lg:pb-18">

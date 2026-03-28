@@ -6,6 +6,7 @@ import ServicesSection2 from '../components/WebServices';
 import ProjectsSection from '../components/ProjectsSec';
 import VideoTestimonials from '../components/testimonials';
 import Webservices from '../assets/web_services_hero.JPG'
+import SEO from '../components/meta-info';
 
 
 export default function WebDevPg() {
@@ -107,6 +108,10 @@ export default function WebDevPg() {
 
   return (
     <>
+    <SEO title="Web Development Services in Visakhapatnam | GenieMedia"
+  description="GenieMedia provides professional web development services in Visakhapatnam, creating responsive, SEO-friendly, and high-performing websites to help businesses grow online."
+   />
+   
     <div className="bg-gradient-to-br 
         from-slate-900 via-slate-800 to-slate-900 
         px-4 sm:px-6 lg:px-16 pt-28 mt-12 sm:pt-24 pb-12 sm:pb-12 lg:pb-18 text-center">

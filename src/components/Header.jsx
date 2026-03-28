@@ -27,7 +27,7 @@ const Header = () => {
     { name: 'About', href: '/about' },
     {
       name: 'Services',
-      href: '#services',
+      href: '/services',
     dropdown: [
     { name: 'Digital Marketing', href: '/digitalMarketing', icon: <TrendingUp/> },
     { name: 'Website Development', href: '/webDevelopment', icon: <Code/> },
@@ -56,11 +56,12 @@ const Header = () => {
           <div className="flex items-center justify-between h-20 ">
             
             <div className="logo-container flex items-center cursor-pointer">
-              <img 
+              <a href="/home">   <img 
                 src={logo} 
                 alt="Logo" 
                 className="logo-img w-36 sm:w-32 md:w-36 object-contain logo-icon"
-              />
+              /></a>
+            
             </div>
 
 
@@ -129,7 +130,7 @@ const Header = () => {
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
              
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@kkdigitalgrowth.com">
+              <a href="/contact">
               <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-md flex items-center gap-2 shadow-lg relative z-10" >
                 <Mail size={16} />
                 Contact Us

@@ -6,6 +6,7 @@ import {React, useState} from 'react'
 import DigitalMar from '../assets/DigitalMarketting.jpg'
 import DigitalMar2 from '../assets/DigitalMarketing2.jpg'
 import DMservices from '../assets/DM_services.jpg'
+import SEO from '../components/meta-info'
 
 export default function DigitalMarketting() {
 
@@ -144,7 +145,11 @@ export default function DigitalMarketting() {
 
   return (
    <>
-
+     <SEO
+        title="Digital Marketing Services in Visakhapatnam | GenieMedia"
+        description="GenieMedia offers expert digital marketing services in Visakhapatnam including SEO, social media marketing, PPC, and web design to help businesses grow online and generate more leads."
+      />
+      
       <div className=" text-center bg-gradient-to-br 
         from-slate-900 via-slate-800 to-slate-900 
         px-4 sm:px-6 lg:px-16 pt-24 mt-12 sm:pt-24 pb-12 sm:pb-12 lg:pb-18">

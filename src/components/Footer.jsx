@@ -6,8 +6,6 @@ export default function Footer() {
   const services = [
   { title: "Digital Marketing", link: "/digitalMarketing" },
   { title: "Web Development", link: "/webDevelopment" },
-  { title: "UI/UX Design", link: "/webDevelopment" },
-  { title: "Content Creation", link: "/digitalMarketing" },
   { title: "Production House", link: "/productionHouse" },
   { title: "Podcast Studio", link: "/podcastStudio" }
 ];
@@ -17,8 +15,7 @@ const company = [
   
   { title: "Projects", link: "/projects" },
   { title: "Testimonials", link: "/reviews" },
-  { title: "Industries", link: "/projects" },
-  { title: "Contact", link: "#contact" }
+  { title: "Contact Us", link: "/contact" }
 ];
 
  
@@ -31,9 +28,9 @@ const company = [
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <img src={Logo} alt="Logo" className='h-32 mb-6 -mt-8' />
-              <p className="text-gray-800 leading-relaxed">
-                Providing cutting-edge digital transformation solutions to help businesses thrive in the modern world.
+              <a href="/home"><img src={Logo} alt="Logo" className='h-28 mb-6 -mt-8' /> </a>
+              <p className="text-gray-800 leading-relaxed text-sm">
+              GenieMedia is a trusted digital marketing agency in Visakhapatnam, offering SEO, social media marketing, and digital growth strategies to help businesses thrive online.
               </p>
             </div>
             

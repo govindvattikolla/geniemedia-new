@@ -7,6 +7,7 @@ import VideoTestimonials from '../components/testimonials'
 import shopify from '../assets/shopify.webp'
 import wordpress from '../assets/wordpress.png'
 import coding from '../assets/code.png'
+import SEO from '../components/meta-info'
 
 
 export default function Projects() {
@@ -14,6 +15,11 @@ export default function Projects() {
    
   return (
    <>
+
+       <SEO title="Our Projects | Digital Marketing & Creative Work in Visakhapatnam | GenieMedia"
+          description="Explore GenieMedia’s portfolio of digital marketing campaigns, web development projects, and creative production work in Visakhapatnam. See how we help businesses grow online."
+        />
+        
        <div className="bg-gray-700
         px-4 sm:px-6 lg:px-16 pt-24 mt-12 sm:pt-24 pb-12 sm:pb-12 lg:pb-18">
 

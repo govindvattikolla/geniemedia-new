@@ -11,7 +11,9 @@ import ProcessSection from '../components/Process';
 import VideoTestimonials from '../components/testimonials';
 import ContactSec from '../components/Contact';
 import { TypingText } from '../components/TypingEff';
-import Genieimg from '../assets/genie-image.jpg'
+import Genieimg from '../assets/genie-image.jpg';
+
+import SEO from '../components/meta-info'
 
 
 export default function HeroSection() {
@@ -19,6 +21,11 @@ export default function HeroSection() {
 
   return (
     <>
+    <SEO
+        title="Digital Marketing Agency in Visakhapatnam | GenieMedia"
+        description="Grow your business with GenieMedia's expert digital marketing services in Visakhapatnam."
+      />
+
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -111,7 +118,7 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
-            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4">
+            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4"  onClick={() => window.location.href="https://wa.me/919032845433"}>
               Get Started
             </button>
             

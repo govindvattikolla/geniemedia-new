@@ -67,6 +67,10 @@ export default function AboutPage2() {
 
   return (
     <>
+     <SEO
+      title="About GenieMedia | Digital Marketing Agency in Visakhapatnam"
+      description="Learn about GenieMedia, a trusted digital marketing agency in Visakhapatnam helping businesses grow with SEO, social media marketing, PPC, and innovative digital strategies."
+    />
     <div className="relative">
     
       <div className="bg-gray-700 px-4 sm:px-6 lg:px-16 pt-28 mt-8 sm:pt-24 pb-20 sm:pb-32 lg:pb-36">

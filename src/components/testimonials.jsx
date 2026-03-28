@@ -196,7 +196,7 @@ const VideoTestimonials = () => {
         .carousel-item.side {
           transform: scale(0.75) translateZ(-100px);
           opacity: 0.5;
-          filter: blur(2px);
+          filter: blur(0.6px);
         }
 
         .carousel-item.center {

@@ -9,6 +9,8 @@ import light from '../assets/podcast/studio-light2-min.JPG';
 import set2 from '../assets/podcast/studio-set2-min.JPG';
 import nytview from '../assets/podcast/StudioNightView-min.JPG';
 import set from '../assets/podcast/studioSet-min.JPG';
+import SEO from "../components/meta-info";
+
 
 
 
@@ -62,7 +64,11 @@ useEffect(() => {
 
   return (
     <div>
-      
+      <SEO 
+      title="Podcast Studio & Audio Production in Visakhapatnam | GenieMedia"
+      description="GenieMedia offers a state-of-the-art podcast studio in Visakhapatnam, providing recording, editing, and production services to help businesses create high-quality podcasts that connect with their audience."
+      />
+          
 
       {/* HERO SECTION */}
       <section className="hero">

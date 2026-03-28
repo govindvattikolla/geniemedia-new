@@ -6,6 +6,8 @@ import Header from './components/Header'
 
 import Footer from './components/Footer'
 import AboutPage2 from './pages/AboutPg-2';
+import ContactSec from './components/Contact';
+import Services1 from './components/Services';
 
 
 const Homepage = lazy(()=> import ('./pages/Home') ) 
@@ -35,6 +37,7 @@ function App() {
          >
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/home" element={<Homepage />} />
           <Route path="/about-2" element={<AboutPage/>} />
           <Route path='/digitalMarketing' element={<DigitalMarketing/>} />
            <Route path='/webDevelopment' element={<WebDevPg/>} />
@@ -43,6 +46,10 @@ function App() {
            <Route path='/about' element={<AboutPage2/>} />
            <Route path='/projects' element={<Projects/>} />
            <Route path='/reviews' element={<Reviews/>} />
+           <Route path='/contact' element={<ContactSec/>} />
+           <Route path='/services' element={<Services1/>} />
+
+
            
          
         </Routes>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import VideoTestimonials from '../components/testimonials'
 import ContactSec from '../components/Contact';
 import './podcast.css'
+import SEO from '../components/meta-info';
 
 export default function Reviews() {
   useEffect( () =>{
@@ -23,6 +24,11 @@ export default function Reviews() {
   }, []);
   return (
    <>
+
+      <SEO ttitle="Client Reviews & Testimonials | GenieMedia, Visakhapatnam"
+         description="Read real client reviews and testimonials for GenieMedia, a trusted digital marketing agency in Visakhapatnam delivering SEO, social media, PPC, web development, and creative solutions."
+       />
+
     <div className="bg-gradient-to-br 
         from-slate-900 via-slate-800 to-slate-900 
         px-4 sm:px-6 lg:px-16 pt-24 mt-12 sm:pt-24 pb-12 sm:pb-12 lg:pb-18">
