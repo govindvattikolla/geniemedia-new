@@ -4,7 +4,7 @@
 import {ChevronRight, ArrowUpRight, ChevronLeft, ChevronUp} from 'lucide-react';
 import {React, useState} from 'react'
 import DigitalMar from '../assets/DigitalMarketting.jpg'
-import DigitalMar2 from '../assets/DigitalMarketing2.jpg'
+import DigitalMar2 from '../assets/DigitalMarketting2.jpg'
 import DMservices from '../assets/DM_services.jpg'
 import SEO from '../components/meta-info'
 

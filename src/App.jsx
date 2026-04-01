@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import AboutPage2 from './pages/AboutPg-2';
 import ContactSec from './components/Contact';
 import Services1 from './components/Services';
+import AnalyticsTracker from '../AnalyticsTracker';
 
 
 const Homepage = lazy(()=> import ('./pages/Home') ) 
@@ -25,7 +26,9 @@ function App() {
 
   return (
     <>
+
     <BrowserRouter>
+    <AnalyticsTracker/>
       <Header />
 
           <Suspense
@@ -36,6 +39,7 @@ function App() {
           }
          >
         <Routes>
+           
           <Route path="/" element={<Homepage />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/about-2" element={<AboutPage/>} />
