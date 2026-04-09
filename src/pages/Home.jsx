@@ -76,62 +76,63 @@ export default function HeroSection() {
 
       
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen bg-white flex items-center pt-20 pb-0 overflow-hidden">
-        
-        {/* Left Character - Lamp */}
-        <div className="absolute left-0 sm:left-8 lg:left-0 hidden md:block bottom-5 w-32 sm:w-40 lg:w-48 animate-float">
-          <Lottie
-             animationData={arrows}
-              loop={true}
-              style={{ width: 300, height: 300 }} />
-         
-        </div>
+   {/* Hero Section */}
+<section className="relative min-h-screen bg-white flex items-center pt-20 pb-0 overflow-hidden">
+  
+  {/* Left Character - arrow */}
+  <div className="absolute left-0 sm:left-8 lg:left-0 bottom-5 w-12 sm:w-40 lg:w-48 animate-float">
+    <div className="w-32 h-28 sm:w-40 sm:h-28 lg:w-72 lg:h-60">
+      <Lottie
+        animationData={arrows}
+        loop={true}
+      />
+    </div>
+  </div>
 
+  {/* Right Character - Genie */}
+  <div
+    className="absolute right-0 lg:right-12 bottom-36 w-24 lg:w-68 xl:w-72 animate-float hidden md:block"
+    style={{ animationDelay: '2s' }}
+  >
+    <img
+      src={Genieimg}
+      alt="lamp"
+      className="w-full h-auto"
+    />
+  </div>
 
-         {/* Right-top Character - Genie */}
-        {/* <div className="absolute right-0 sm:right-8 lg:right-30 bottom-0 lg:top-40 w-20 sm:w-24  lg:w-60 animate-float hidden md:block" style={{animationDelay: '1s'}}>
-      
-              <img src="https://res.cloudinary.com/dcnwphnzn/image/upload/v1769754292/noun-genie-1005023_noi6wa.png" alt="GENIE" width='250px' height='380px' />
+  {/* Main Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center xl:pr-72">
+    
+    <h1 className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
+      <span className="italic">Smarter Digital Marketing </span>
+      <br />
+      <span className="italic">Stronger Growth.</span>
+    </h1>
 
-        </div> */}
+    <p className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-gray-600 max-w-4xl mx-auto mb-6">
+      From visibility to real business growth, we position your brand as the obvious choice in your market through{' '}
+      <TypingText />
+    </p>
 
-        {/* Right Character - lamp */}
-        <div className="absolute right-0 sm:right-8 lg:right-12 bottom-36 w-22 sm:w-24  lg:w-72 animate-float hidden md:block" style={{animationDelay: '2s'}}>
-        
-              <img src={Genieimg} alt="lamp" width='450px' height='700px' />
+    {/* CTA Buttons */}
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
+      <button
+        className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4"
+        onClick={() => window.location.href = "/contact"}
+      >
+        Get Started
+      </button>
+    </div>
 
-        </div>
+  </div>
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center lg:ml-44">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
-            <span className="italic">Smarter Digital Marketing </span>
-            <br/>
-            <span className="italic">Stronger Growth.</span>
-          </h1>
+  {/* Scroll Indicator */}
+  <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
+    <ChevronDown className="w-8 h-8 text-gray-400" />
+  </div>
 
-          <p className="text-xl sm:text-2xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-6">
-           From visibility to real business growth, we position your brand as the obvious choice in your market through{' '}
-            <TypingText/>
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
-            <button className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4"  onClick={() => window.location.href="https://wa.me/919032845433"}>
-              Get Started
-            </button>
-            
-          </div>
-
-        
-        </div>
-
-        {/* Scroll Indicator */}
-       <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
-         <ChevronDown className="w-8 h-8 text-gray-400" />
-       </div>
-      </section>
+</section>
 
       <AboutSection1/>
 

@@ -93,14 +93,14 @@ const company = [
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#9463EE] flex-shrink-0" />
-                <a href="tel:+91 9966888428" className="text-gray-800 hover:text-orange-500 transition-colors duration-200">
-                  +91 9966888428
+                <a href="tel:+91 9032845433" className="text-gray-800 hover:text-orange-500 transition-colors duration-200">
+                  +91 9032845433
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#9463EE] flex-shrink-0" />
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@kkdigitalgrowth.com" className="text-gray-800 hover:text-orange-500 transition-colors duration-200">
-                 contact@kkdigitalgrowth.com
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@geniemedia.in" className="text-gray-800 hover:text-orange-500 transition-colors duration-200">
+                 admin@geniemedia.in
                 </a>
               </li>
             </ul>

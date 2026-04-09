@@ -49,7 +49,7 @@ const ProcessSection = () => {
           <p className="text-gray-600 text-base sm:text-lg max-w-xl mb-8">
             Need more details? We're happy to work through them together.
           </p>
-          <button className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-300 text-base sm:text-lg font-medium">
+          <button className="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-300 text-base sm:text-lg font-medium" onClick={()=>{location.href="/contact"}}>
             Let's talk
             <MessageCircle className="w-5 h-5" />
           </button>

@@ -9,7 +9,11 @@ import AboutPage2 from './pages/AboutPg-2';
 import ContactSec from './components/Contact';
 import Services1 from './components/Services';
 import AnalyticsTracker from '../AnalyticsTracker';
-
+import AdminBlogs from "./pages/AdminBlogs";
+import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/Blogdetail";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoutes";
 
 const Homepage = lazy(()=> import ('./pages/Home') ) 
 const AboutPage = lazy(()=> import('./pages/About'))
@@ -52,7 +56,19 @@ function App() {
            <Route path='/reviews' element={<Reviews/>} />
            <Route path='/contact' element={<ContactSec/>} />
            <Route path='/services' element={<Services1/>} />
+           <Route path="/admin" element={<AdminLogin />} />
 
+          <Route
+            path="/admin/blogs"
+            element={
+              <ProtectedRoute>
+                <AdminBlogs />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/*" element={<BlogDetail />} />
 
            
          

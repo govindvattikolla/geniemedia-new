@@ -50,7 +50,7 @@ const ContentMarketing = () => {
 
       <div className="max-w-7xl w-full">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center mb-8 sm:mb-16 lg:mb-20 text-gray-800">
-          Content marketing is <span className="italic">evolving</span>
+          Content marketing is evolving
         </h1>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">

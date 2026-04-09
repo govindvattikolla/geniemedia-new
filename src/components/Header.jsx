@@ -36,6 +36,7 @@ const Header = () => {
   ]
     },
     { name: 'Projects', href: '/projects' },
+    { name: 'blog', href: '/blogs' },
     {
       name: 'Reviews',
       href: '/reviews',
@@ -49,7 +50,7 @@ const Header = () => {
 
       <header 
         className={`header-container fixed top-0 left-0 right-0 z-50  transition-all duration-300 border-b ${
-          'bg-white'
+          'bg-gray-800'
         }`}
       >
         <div className="max-w-8xl mx-auto px-0 sm:px-6 lg:px-8">
@@ -65,67 +66,82 @@ const Header = () => {
             </div>
 
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-12 nav-menu ">
-              {menuItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <a
-                    href={item.href}
-                    className="nav-link flex items-center gap-1  font-semibold text-gray-900 hover:text-purple-600 py-1 text-lg"
-                  >
-                    {item.name}
-                    {item.dropdown && (
-                      <ChevronDown 
-                        size={14} 
-                        className={`transition-transform duration-300 ${
-                          activeDropdown === item.name ? 'rotate-180' : ''
-                        }`}
-                      />
-                    )}
-                  </a>
-                                  {/* Dropdown Menu */}
-                  {item.dropdown && activeDropdown === item.name && (
-                    <div
-                      className="
-                        dropdown-menu 
-                        absolute left-0 top-7 
-                        mt-2 w-64 
-                        bg-white rounded-2xl shadow-2xl 
-                        border border-gray-100 
-                        overflow-hidden z-50
-                      "
-                      onMouseEnter={() => setActiveDropdown(item.name)}     
-                      onMouseLeave={() => setActiveDropdown(null)}          
-                    >
-                      {item.dropdown.map((subItem) => (
-                        <a
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="
-                            dropdown-item 
-                            flex items-center gap-3 
-                            px-5 py-3.5 
-                            text-gray-700 
-                            hover:text-purple-600 
-                            border-b border-gray-50 
-                            last:border-0
-                          "
-                        >
-                          <span className="text-2xl">{subItem.icon}</span>
-                          <span className="text-base font-medium">{subItem.name}</span>
-                        </a>
-                      ))}
-                    </div>
-                  )}
+          <nav className="hidden lg:flex items-center gap-12 nav-menu">
+  {menuItems.map((item) => {
+    let timeout;
 
-                </div>
-              ))}
-            </nav>
+    return (
+      <div
+        key={item.name}
+        className="relative"
+        onMouseEnter={() => {
+          clearTimeout(timeout);
+          if (item.dropdown) setActiveDropdown(item.name);
+        }}
+        onMouseLeave={() => {
+          timeout = setTimeout(() => {
+            setActiveDropdown(null);
+          }, 150); // smooth delay
+        }}
+      >
+        <a
+          href={item.href}
+          className="nav-link flex items-center gap-1 font-semibold text-gray-100 hover:text-purple-600 py-2 text-lg"
+        >
+          {item.name}
+          {item.dropdown && (
+            <ChevronDown
+              size={14}
+              className={`transition-transform duration-300 ${
+                activeDropdown === item.name ? 'rotate-180' : ''
+              }`}
+            />
+          )}
+        </a>
+
+        {/* Dropdown */}
+        {item.dropdown && activeDropdown === item.name && (
+          <div
+            className="
+              absolute left-0 top-full 
+              w-64 
+              bg-white rounded-2xl shadow-2xl 
+              border border-gray-100 
+              overflow-hidden z-50
+            "
+            onMouseEnter={() => clearTimeout(timeout)}
+            onMouseLeave={() => {
+              timeout = setTimeout(() => {
+                setActiveDropdown(null);
+              }, 150);
+            }}
+          >
+            {/* Invisible hover bridge */}
+            <div className="absolute -top-3 left-0 w-full h-3 bg-transparent"></div>
+
+            {item.dropdown.map((subItem) => (
+              <a
+                key={subItem.name}
+                href={subItem.href}
+                className="
+                  flex items-center gap-3 
+                  px-5 py-3.5 
+                  text-gray-700 
+                  hover:text-purple-600 
+                  border-b border-gray-50 
+                  last:border-0
+                "
+              >
+                <span className="text-2xl">{subItem.icon}</span>
+                <span className="text-base font-medium">{subItem.name}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  })}
+</nav>
 
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
@@ -146,9 +162,9 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-900 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
               </div>
             </button>
           </div>

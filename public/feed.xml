@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Genie Media</title>
+    <link>https://geniemedia.in/</link>
+    <description>Latest updates</description>
+
+    <item>
+      <title>Sample Post</title>
+      <link>https://geniemedia.in/blog/sample</link>
+    </item>
+
+  </channel>
+</rss>

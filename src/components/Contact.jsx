@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, Globe } from 'lucide-react';
-
+import React, { useState, useEffect, useRef } from "react";
+import { Mail, Phone, MapPin, Send, Clock, Globe, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const ContactSec = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -36,119 +38,122 @@ const ContactSec = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
-      details: ['+91 9966888428'],
-      color: 'from-green-500 to-green-600'
+      title: "Phone",
+      details: ["+91 9032845433"],
+      color: "from-green-500 to-green-600",
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: ['contact@kkdigitalgrowth.com'],
-      color: 'from-red-500 to-red-600'
+      title: "Email",
+      details: ["admin@geniemedia.in"],
+      color: "from-red-500 to-red-600",
     },
     {
       icon: MapPin,
-      title: 'Office',
-      details: ['5A2 4th Floor KP Icon KP Infra', 'Yendada, Vishakhapatnam - 530045'],  
-
-      color: 'from-blue-500 to-blue-600'
+      title: "Office",
+      details: [
+        "5A2 4th Floor KP Icon KP Infra",
+        "Yendada, Vishakhapatnam - 530045",
+      ],
+      color: "from-blue-500 to-blue-600",
     },
     {
       icon: Clock,
-      title: 'Working Hours',
-      details: ['Monday - Friday: 10AM - 7PM', 'Saturday: 10AM - 4PM'],
-      color: 'from-purple-500 to-purple-600'
-    }
+      title: "Working Hours",
+      details: ["Monday - Friday: 10AM - 7PM", "Saturday: 10AM - 4PM"],
+      color: "from-purple-500 to-purple-600",
+    },
+  ];
+
+  const services = [
+    "Digital Marketing",
+    "Web Development",
+    "Production House",
+    "Podcast Studio",
   ];
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+    // Clear error when user starts typing again
+    if (error) setError("");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      alert('Message sent successfully! We will get back to you soon.');
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+    setError("");
+
+    // EmailJS send — make sure your template variables match formData keys:
+    // {{name}}, {{email}}, {{phone}}, {{service}}, {{message}}
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setIsSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+        setIsSubmitting(false);
+
+        // Auto-hide success message after 6 seconds
+        setTimeout(() => setIsSuccess(false), 6000);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        setError("Failed to send message. Please try again or contact us directly.");
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-    }, 1500);
   };
 
   return (
     <>
-
-    
-
       <style>{`
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(-50px); }
+          to { opacity: 1; transform: translateX(0); }
         }
-
         @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(50px); }
+          to { opacity: 1; transform: translateX(0); }
         }
-
         @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes successPop {
+          0% { opacity: 0; transform: scale(0.85) translateY(10px); }
+          60% { transform: scale(1.03) translateY(-2px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-
-        .animate-slideInLeft {
-          animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-
-        .animate-slideInRight {
-          animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
+        .animate-fadeInUp { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .animate-slideInLeft { animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .animate-slideInRight { animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
         .contact-card {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .contact-card:hover {
           transform: translateY(-8px);
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
@@ -156,8 +161,11 @@ const ContactSec = () => {
 
         .form-input:focus {
           outline: none;
-          border-color: #FF6B00;
-          box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+          border-color: #9463EE;
+          box-shadow: 0 0 0 3px rgba(148, 99, 238, 0.12);
+        }
+        .form-input {
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .submit-btn {
@@ -166,7 +174,6 @@ const ContactSec = () => {
           position: relative;
           overflow: hidden;
         }
-
         .submit-btn::before {
           content: '';
           position: absolute;
@@ -175,57 +182,66 @@ const ContactSec = () => {
           width: 0;
           height: 0;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.2);
           transform: translate(-50%, -50%);
           transition: width 0.6s ease, height 0.6s ease;
         }
-
-        .submit-btn:hover::before {
-          width: 300px;
-          height: 300px;
-        }
-
+        .submit-btn:hover::before { width: 400px; height: 400px; }
         .submit-btn:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4);
+          box-shadow: 0 15px 40px rgba(148, 99, 238, 0.4);
         }
-
         .submit-btn:disabled {
-          opacity: 0.6;
+          opacity: 0.65;
           cursor: not-allowed;
           transform: none;
+          box-shadow: none;
         }
 
-        .icon-float {
-          animation: float 3s ease-in-out infinite;
+        .success-banner {
+          animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
         }
+
+        .icon-float { animation: float 3s ease-in-out infinite; }
+
+        select.form-input option { color: #374151; }
       `}</style>
 
-      <section 
+      <section
         ref={sectionRef}
-        className="relative bg-gray-100 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden" id='contact'
+        className="relative bg-gray-100 py-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        id="contact"
       >
+        {/* Background blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-20 right-10 w-96 h-96 bg-orange-200 rounded-full blur-3xl opacity-20"></div>
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-200 rounded-full blur-3xl opacity-20"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          <div className={`text-center mb-10 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-200 border border-orange-200 rounded-full mb-4">
+
+          {/* Header */}
+          <div
+            className={`text-center mb-10 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-200 border border-purple-200 rounded-full mb-4">
               <Globe className="text-[#9463EE]" size={16} />
-              <span className="text-sm font-semibold text-balck">Get In Touch</span>
+              <span className="text-sm font-semibold text-black">Get In Touch</span>
             </div>
             <h2 className="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-4">
-              Let's Start a <span className="bg-black bg-clip-text text-transparent">Conversation</span>
+              Let's Start a{" "}
+              <span className="text-[#9463EE]">Conversation</span>
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               We'd love to hear from you. Send us a message and we'll respond as soon as possible
             </p>
           </div>
 
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}
-               style={{ animationDelay: '0.2s' }}>
+          {/* Info Cards */}
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
+            style={{ animationDelay: "0.2s" }}
+          >
             {contactInfo.map((info, index) => (
               <div key={index} className="contact-card bg-white rounded-2xl p-6 shadow-lg">
                 <div className={`icon-float w-14 h-14 bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
@@ -239,109 +255,159 @@ const ContactSec = () => {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12"> 
+          {/* Form + Map */}
+          <div className="grid lg:grid-cols-2 gap-12">
 
-           <div className={`${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+            {/* Form */}
+            <div
+              className={`${isVisible ? "animate-slideInLeft" : "opacity-0"}`}
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
-                      Send us a Message
-                    </h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+                  Send us a Message
+                </h3>
 
-                    <form
-                      action="https://formsubmit.co/contact@kkdigitalgrowth.com"
-                      method="POST"
-                      className="space-y-6"
-                    >
-                    
-                      <input type="hidden" name="_template" value="table" />
-                      <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" />
-                  
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Full Name
-                          </label>
-                          <input
-                            type="text"
-                            name="name"
-                            required
-                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                            placeholder="John Doe"
-                          />
-                        </div>
-                  
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Email Address
-                          </label>
-                          <input
-                            type="email"
-                            name="email"
-                            
-                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                            placeholder="john@example.com"
-                          />
-                        </div>
-                      </div>
-                  
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Phone Number
-                          </label>
-                          <input
-                            type="tel"
-                            name="phone"
-                            required
-                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                            placeholder="Enter Mobile Number"
-                          />
-                        </div>
-                  
-                        <div>
-                          <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Subject
-                          </label>
-                          <input
-                            type="text"
-                            name="subject"
-                            className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all"
-                            placeholder="Project Inquiry"
-                          />
-                        </div>
-                      </div>
-                  
-                      <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Your Message
-                        </label>
-                        <textarea
-                          name="message"
-                          rows="6"
-                          required
-                          className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 transition-all resize-none"
-                          placeholder="Tell us about your project..."
-                        ></textarea>
-                      </div>
-                  
-                      <button
-                        type="submit"
-                        className="submit-btn w-full py-4 text-white font-bold rounded-xl text-lg flex items-center justify-center gap-2 relative z-10"
-                      >
-                        Send Message
-                        <Send size={20} />
-                      </button>
-                    </form>
-                   
+                {/* ✅ Success Banner */}
+                {isSuccess && (
+                  <div className="success-banner flex items-start gap-4 bg-green-50 border border-green-200 rounded-2xl p-5 mb-6">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle className="text-green-600" size={22} />
+                    </div>
+                    <div>
+                      <p className="font-bold text-green-800 text-base mb-0.5">Message Sent Successfully!</p>
+                      <p className="text-green-700 text-sm">
+                        Thank you for reaching out. Our team will get back to you within 24 hours.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* ❌ Error Banner */}
+                {error && (
+                  <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-2xl p-4 mb-6">
+                    <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                    <p className="text-red-700 text-sm font-medium">{error}</p>
+                  </div>
+                )}
+
+                <form className="space-y-6" onSubmit={handleSubmit}>
+
+                  {/* Name + Email */}
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Full Name <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email Address <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200"
+                        placeholder="john@example.com"
+                      />
+                    </div>
                   </div>
 
-            </div>
-            
+                  {/* Phone + Service Dropdown */}
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Phone Number <span className="text-red-400">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200"
+                        placeholder="Enter Mobile Number"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Service Required <span className="text-red-400">*</span>
+                      </label>
+                      <select
+                        name="service"
+                        required
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-white text-gray-700 cursor-pointer"
+                      >
+                        <option value="" disabled>Select a Service</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
 
-            <div className={`${isVisible ? 'animate-slideInRight' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+                  {/* Message */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Your Message <span className="text-red-400">*</span>
+                    </label>
+                    <textarea
+                      name="message"
+                      rows="6"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 resize-none"
+                      placeholder="Tell us about your project..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="submit-btn w-full py-4 text-white font-bold rounded-xl text-lg flex items-center justify-center gap-2 relative z-10"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send size={20} />
+                      </>
+                    )}
+                  </button>
+
+                </form>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div
+              className={`${isVisible ? "animate-slideInRight" : "opacity-0"}`}
+              style={{ animationDelay: "0.5s" }}
+            >
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden h-full">
-                <div className="relative h-64 lg:h-80 bg-gradient-to-br from-orange-100 to-orange-200">
+                <div className="relative h-64 lg:h-80">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d400.67734146285284!2d83.36646125424554!3d17.780138304199394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b9f81ce4773%3A0xdb3f7e114ab5a4f3!2sKP%20ICON%20KP%20INFRA%20LLP!5e0!3m2!1sen!2sin!4v1764246017962!5m2!1sen!2si"
                     width="100%"
@@ -353,13 +419,11 @@ const ContactSec = () => {
                   ></iframe>
                 </div>
 
-                
-
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Office</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
                         <MapPin className="text-[#9463EE]" size={24} />
                       </div>
                       <div>
@@ -383,6 +447,7 @@ const ContactSec = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
