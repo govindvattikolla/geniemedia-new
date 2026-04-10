@@ -1,15 +1,4 @@
-// const CATEGORIES = [
-//   "SEO & Content Marketing",
-//   "Social Media Marketing",
-//   " Web Design & Development",
-//   "App Development (Ios & Android)",
-//   "Pay-Per-Click Advertising (PPC)",
-//   "Email Marketing",
-//   "Brand Strategy & Consulting",
-//   "GMB management",
-//   "Analytics & Reporting",
-//   "Influencer Marketing",
-// ];
+
 
 
 import React, { useState, useEffect, useRef } from "react";
@@ -278,20 +267,16 @@ function KeywordsInput({ value, onChange }) {
 }
 
 const CATEGORIES = [
-  "Services",
-  "Corporate Shoots",
-  "Event Shoots",
-  "Podcast Shoots",
-  "Professional Shoots",
-  "Business Portfolio",
-  "UI/UX Design",
-  "Animation 2d or 3d",
-  "Video Editing",
-  "Podcast",
-  "Figma",
-  "Technology",
-  "News"
-
+  "SEO & Content Marketing",
+  "Social Media Marketing",
+  " Web Design & Development",
+  "App Development (Ios & Android)",
+  "Pay-Per-Click Advertising (PPC)",
+  "Email Marketing",
+  "Brand Strategy & Consulting",
+  "GMB management",
+  "Analytics & Reporting",
+  "Influencer Marketing",
 ];
 
 const emptyForm = {
