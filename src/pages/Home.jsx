@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
-import { ChevronDown, MessageCircle, ArrowUp } from 'lucide-react';
-import Lottie from 'lottie-react';
-import hummingBird from '../assets/lottie/hummingbird 1.json';
-import arrows from '../assets/lottie/Animated Arrows.json'
-import AboutSection1 from '../components/AboutSec';
-import Services1 from '../components/Services'
-import ContentEvolution from '../components/contentEval';
-import ContentMarketing from '../components/contentEval';
-import ProcessSection from '../components/Process';
-import VideoTestimonials from '../components/testimonials';
-import ContactSec from '../components/Contact';
-import { TypingText } from '../components/TypingEff';
-import Genieimg from '../assets/genie-image.jpg';
+import React, { useState } from "react";
+import { ChevronDown, MessageCircle, ArrowUp } from "lucide-react";
+import Lottie from "lottie-react";
+import hummingBird from "../assets/lottie/hummingbird 1.json";
+import arrows from "../assets/lottie/Animated Arrows.json";
+import AboutSection1 from "../components/AboutSec";
+import Services1 from "../components/Services";
+import ContentEvolution from "../components/contentEval";
+import ContentMarketing from "../components/contentEval";
+import ProcessSection from "../components/Process";
+import VideoTestimonials from "../components/testimonials";
+import ContactSec from "../components/Contact";
+import { TypingText } from "../components/TypingEff";
+import Genieimg from "../assets/genie-image.jpg";
 
-import SEO from '../components/meta-info'
-
+import SEO from "../components/meta-info";
 
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-    <SEO
+      <SEO
         title="Digital Marketing Agency in Visakhapatnam | GenieMedia"
         description="Grow your business with GenieMedia's expert digital marketing services in Visakhapatnam."
       />
@@ -74,76 +73,69 @@ export default function HeroSection() {
         }
       `}</style>
 
-      
+      {/* Hero Section */}
+      <section className="relative min-h-screen bg-white flex items-center pt-20 pb-0 overflow-hidden">
+        {/* Left Character - arrow */}
+        <div className="absolute left-0 sm:left-8 lg:left-0 bottom-5 w-12 sm:w-40 lg:w-48 animate-float">
+          <div className="w-32 h-28 sm:w-40 sm:h-28 lg:w-72 lg:h-60">
+            <Lottie animationData={arrows} loop={true} />
+          </div>
+        </div>
 
-   {/* Hero Section */}
-<section className="relative min-h-screen bg-white flex items-center pt-20 pb-0 overflow-hidden">
-  
-  {/* Left Character - arrow */}
-  <div className="absolute left-0 sm:left-8 lg:left-0 bottom-5 w-12 sm:w-40 lg:w-48 animate-float">
-    <div className="w-32 h-28 sm:w-40 sm:h-28 lg:w-72 lg:h-60">
-      <Lottie
-        animationData={arrows}
-        loop={true}
-      />
-    </div>
-  </div>
+        {/* Right Character - Genie (desktop only: absolute right) */}
+        <div
+          className="hidden md:hidden absolute right-0 lg:right-12 bottom-36 lg:w-70 xl:w-72 animate-float"
+          style={{ animationDelay: "2s" }}
+        >
+          <img src={Genieimg} alt="Genie" className="w-full h-auto" />
+        </div>
 
-  {/* Right Character - Genie */}
-  <div
-    className="absolute right-0 lg:right-12 bottom-36 w-24 lg:w-68 xl:w-72 animate-float hidden md:block"
-    style={{ animationDelay: '2s' }}
-  >
-    <img
-      src={Genieimg}
-      alt="lamp"
-      className="w-full h-auto"
-    />
-  </div>
+        {/* Genie - mobile background */}
+        <div className="absolute inset-0 flex justify-center items-center  pointer-events-none z-0">
+          <img
+            src={Genieimg}
+            alt="Genie"
+            className="w-72 opacity-30 md:opacity-40 animate-float"
+          />
+        </div>
 
-  {/* Main Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center xl:pr-72">
-    
-    <h1 className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
-      <span className="italic">Smarter Digital Marketing </span>
-      <br />
-      <span className="italic">Stronger Growth.</span>
-    </h1>
+        {/* Main Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-15 pb-0 lg:py-36 text-center  w-full">
+          <h1 className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-serif lg:pt-10 leading-tight mb-8 max-w-5xl mx-auto">
+            <span className="italic">Smarter Digital Marketing </span>
+            <br />
+            <span className="italic">Stronger Growth.</span>
+          </h1>
 
-    <p className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl text-gray-600 max-w-4xl mx-auto mb-6">
-      From visibility to real business growth, we position your brand as the obvious choice in your market through{' '}
-      <TypingText />
-    </p>
+          <p className="text-2xl sm:text-2xl lg:text-2xl xl:text-3xl text-gray-900 max-w-4xl mx-auto mb-6">
+            From visibility to real business growth, we position your brand as
+            the obvious choice in your market through <TypingText />
+          </p>
 
-    {/* CTA Buttons */}
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
-      <button
-        className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4"
-        onClick={() => window.location.href = "/contact"}
-      >
-        Get Started
-      </button>
-    </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 lg:mb-16">
+            <button
+              className="bg-purple-500 hover:bg-black text-white px-8 py-4 mb-0 rounded-full text-lg font-semibold transition-colors shadow-xl hover:shadow-2xl transform hover:scale-105 duration-300 my-4"
+              onClick={() => (window.location.href = "/contact")}
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
 
-  </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
+          <ChevronDown className="w-8 h-8 text-gray-400" />
+        </div>
+      </section>
 
-  {/* Scroll Indicator */}
-  <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
-    <ChevronDown className="w-8 h-8 text-gray-400" />
-  </div>
+      <AboutSection1 />
 
-</section>
-
-      <AboutSection1/>
-
-      
-      <Services1/>
-      <ContentMarketing/>
-      <ProcessSection/>
-      <VideoTestimonials/>
-      <ContactSec/>
-
-    
+      <Services1 />
+      <ContentMarketing />
+      <ProcessSection />
+      <VideoTestimonials />
+      <ContactSec />
     </>
   );
 }

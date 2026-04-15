@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
-import BASE_URL from "../Api";
+import BASE_URL from "../api";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
