@@ -1,129 +1,143 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, Phone, Mail, TrendingUp, Code, Video, Mic } from 'lucide-react';
-import "./Header.css"
-import logo from "../assets/GenieMedia-Logo.png"
-
+import React, { useState, useEffect } from "react";
+import {
+  ChevronDown,
+  Phone,
+  Mail,
+  TrendingUp,
+  Code,
+  Video,
+  Mic,
+} from "lucide-react";
+import "./Header.css";
+import logo from "../assets/GenieMedia-Logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
-  
+
   useEffect(() => {
-  document.body.classList.add("header-loaded");
-}, []);
+    document.body.classList.add("header-loaded");
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     {
-      name: 'Services',
-      href: '/services',
-    dropdown: [
-    { name: 'Digital Marketing', href: '/digitalMarketing', icon: <TrendingUp/> },
-    { name: 'Website Development', href: '/webDevelopment', icon: <Code/> },
-    { name: 'Production House', href: '/productionHouse', icon: <Video/> },
-    { name: 'Podcast Studio Rentals', href: '/podcastStudio', icon: <Mic/> }
-  ]
+      name: "Services",
+      href: "/services",
+      dropdown: [
+        {
+          name: "Digital Marketing",
+          href: "/digitalMarketing",
+          icon: <TrendingUp />,
+        },
+        {
+          name: "Website Development",
+          href: "/webDevelopment",
+          icon: <Code />,
+        },
+        { name: "Production House", href: "/productionHouse", icon: <Video /> },
+        {
+          name: "Podcast Studio Rentals",
+          href: "/podcastStudio",
+          icon: <Mic />,
+        },
+      ],
     },
-    { name: 'Projects', href: '/projects' },
-    { name: 'blog', href: '/blogs' },
+    { name: "Projects", href: "/projects" },
+    { name: "blog", href: "/blogs" },
     {
-      name: 'Reviews',
-      href: '/reviews',
-    }
-     
+      name: "Reviews",
+      href: "/reviews",
+    },
   ];
 
   return (
     <>
-    
-
-      <header 
-        className={`header-container fixed top-0 left-0 right-0 z-50  transition-all duration-300 border-b ${
-          'bg-gray-800'
-        }`}
+      <header
+        className={`header-container fixed top-0 left-0 right-0 z-50  transition-all duration-300 border-b ${"bg-gray-800"}`}
       >
         <div className="max-w-8xl mx-auto px-0 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 ">
-            
             <div className="logo-container flex items-center cursor-pointer">
-              <a href="/home">   <img 
-                src={logo} 
-                alt="Logo" 
-                className="logo-img w-36 sm:w-32 md:w-36 object-contain logo-icon"
-              /></a>
-            
+              <a href="/home">
+                {" "}
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="logo-img w-36 sm:w-32 md:w-36 object-contain logo-icon"
+                />
+              </a>
             </div>
 
+            <nav className="hidden lg:flex items-center gap-12 nav-menu">
+              {menuItems.map((item) => {
+                let timeout;
 
-          <nav className="hidden lg:flex items-center gap-12 nav-menu">
-  {menuItems.map((item) => {
-    let timeout;
+                return (
+                  <div
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => {
+                      clearTimeout(timeout);
+                      if (item.dropdown) setActiveDropdown(item.name);
+                    }}
+                    onMouseLeave={() => {
+                      timeout = setTimeout(() => {
+                        setActiveDropdown(null);
+                      }, 150); // smooth delay
+                    }}
+                  >
+                    <a
+                      href={item.href}
+                      className="nav-link flex items-center gap-1 font-semibold text-gray-100 hover:text-purple-600 py-2 text-lg"
+                    >
+                      {item.name}
+                      {item.dropdown && (
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-300 ${
+                            activeDropdown === item.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      )}
+                    </a>
 
-    return (
-      <div
-        key={item.name}
-        className="relative"
-        onMouseEnter={() => {
-          clearTimeout(timeout);
-          if (item.dropdown) setActiveDropdown(item.name);
-        }}
-        onMouseLeave={() => {
-          timeout = setTimeout(() => {
-            setActiveDropdown(null);
-          }, 150); // smooth delay
-        }}
-      >
-        <a
-          href={item.href}
-          className="nav-link flex items-center gap-1 font-semibold text-gray-100 hover:text-purple-600 py-2 text-lg"
-        >
-          {item.name}
-          {item.dropdown && (
-            <ChevronDown
-              size={14}
-              className={`transition-transform duration-300 ${
-                activeDropdown === item.name ? 'rotate-180' : ''
-              }`}
-            />
-          )}
-        </a>
-
-        {/* Dropdown */}
-        {item.dropdown && activeDropdown === item.name && (
-          <div
-            className="
+                    {/* Dropdown */}
+                    {item.dropdown && activeDropdown === item.name && (
+                      <div
+                        className="
               absolute left-0 top-full 
               w-64 
               bg-white rounded-2xl shadow-2xl 
               border border-gray-100 
               overflow-hidden z-50
             "
-            onMouseEnter={() => clearTimeout(timeout)}
-            onMouseLeave={() => {
-              timeout = setTimeout(() => {
-                setActiveDropdown(null);
-              }, 150);
-            }}
-          >
-            {/* Invisible hover bridge */}
-            <div className="absolute -top-3 left-0 w-full h-3 bg-transparent"></div>
+                        onMouseEnter={() => clearTimeout(timeout)}
+                        onMouseLeave={() => {
+                          timeout = setTimeout(() => {
+                            setActiveDropdown(null);
+                          }, 150);
+                        }}
+                      >
+                        {/* Invisible hover bridge */}
+                        <div className="absolute -top-3 left-0 w-full h-3 bg-transparent"></div>
 
-            {item.dropdown.map((subItem) => (
-              <a
-                key={subItem.name}
-                href={subItem.href}
-                className="
+                        {item.dropdown.map((subItem) => (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="
                   flex items-center gap-3 
                   px-5 py-3.5 
                   text-gray-700 
@@ -131,40 +145,41 @@ const Header = () => {
                   border-b border-gray-50 
                   last:border-0
                 "
-              >
-                <span className="text-2xl">{subItem.icon}</span>
-                <span className="text-base font-medium">{subItem.name}</span>
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  })}
-</nav>
+                          >
+                            <span className="text-2xl">{subItem.icon}</span>
+                            <span className="text-base font-medium">
+                              {subItem.name}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </nav>
 
             {/* CTA Buttons - Desktop */}
             <div className="hidden lg:flex items-center gap-3 cta-buttons lg:pr-10">
-             
               <a href="/contact">
-              <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-md flex items-center gap-2 shadow-lg relative z-10" >
-                <Mail size={16} />
-                Contact Us
-              </button>  </a>
+                <button className=" px-6 py-2.5 text-white bg-purple-600 hover:bg-black font-semibold rounded-full text-md flex items-center gap-2 shadow-lg relative z-10">
+                  <Mail size={16} />
+                  Contact Us
+                </button>{" "}
+              </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 mr-8 rounded-lg   hover:bg-gray-100 transition-colors ${
-                isMobileMenuOpen ? 'hamburger-open' : ''
+              className={`lg:hidden group p-2 mr-8 rounded-lg hover:bg-gray-800 transition-colors ${
+                isMobileMenuOpen ? "hamburger-open" : ""
               }`}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
-                <span className="hamburger-line w-full h-0.5 bg-gray-100 hover:bg-gray-800 rounded-full"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 group-hover:bg-gray-300 rounded-full transition-colors"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 group-hover:bg-gray-300 rounded-full transition-colors"></span>
+                <span className="hamburger-line w-full h-0.5 bg-gray-100 group-hover:bg-gray-300 rounded-full transition-colors"></span>
               </div>
             </button>
           </div>
@@ -179,16 +194,22 @@ const Header = () => {
                   {item.dropdown ? (
                     <div>
                       <button
-                        onClick={() => setActiveMobileDropdown(
-                          activeMobileDropdown === item.name ? null : item.name
-                        )}
+                        onClick={() =>
+                          setActiveMobileDropdown(
+                            activeMobileDropdown === item.name
+                              ? null
+                              : item.name
+                          )
+                        }
                         className="w-full flex items-center justify-between py-3 px-4 rounded-xl text-gray-700 font-semibold hover:bg-orange-50 hover:text-orange-600 transition-all"
                       >
                         {item.name}
-                        <ChevronDown 
-                          size={18} 
+                        <ChevronDown
+                          size={18}
                           className={`transition-transform duration-300 ${
-                            activeMobileDropdown === item.name ? 'rotate-180' : ''
+                            activeMobileDropdown === item.name
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
@@ -202,7 +223,9 @@ const Header = () => {
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               <span className="text-xl">{subItem.icon}</span>
-                              <span className="font-medium">{subItem.name}</span>
+                              <span className="font-medium">
+                                {subItem.name}
+                              </span>
                             </a>
                           ))}
                         </div>
@@ -235,7 +258,6 @@ const Header = () => {
           </div>
         )}
       </header>
-
     </>
   );
 };
