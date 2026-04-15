@@ -68,6 +68,7 @@ const ContactSec = () => {
   const services = [
     "Digital Marketing",
     "Web Development",
+    "App Development",
     "Production House",
     "Podcast Studio",
   ];

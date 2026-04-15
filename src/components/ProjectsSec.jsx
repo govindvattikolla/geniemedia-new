@@ -4,6 +4,13 @@ import kns from '../assets/knsMetals.png'
 import laserfold from '../assets/LaserFold.png'
 import genie from '../assets/GenieStudio.png'
 import buildzone from '../assets/buildzon.png'
+import Nuconaerospace from '../assets/nuconaerospace.png'
+import Synergene from '../assets/synergeneapi.png'
+import Vivodyne from '../assets/vivodyne.png'
+import Decagon from '../assets/decagon.png'
+import Freenome from '../assets/freenome.png'
+
+
 
 const ProjectsSection = () => {
  
@@ -39,15 +46,36 @@ const projects = [
     name: "Buildzone",
     image: buildzone,
       url: "https://www.buildzonprojects.com/"
-  }
+  },
+  {
+    name: "Nucon Aerospace - by Snapbrio",
+    image: Nuconaerospace,
+    url:"https://www.nuconaerospace.com/"
+  },
+  {
+    name: "Synergene - by Snapbrio",
+    image: Synergene,
+    url:"https://synergeneapi.com/"
+  },
+  {
+    name: "Vivodyne - by Snapbrio",
+    image: Vivodyne,
+    url:"https://www.vivodyne.com//"
+  },
+  {
+    name: "Decagon - by Snapbrio",
+    image: Decagon,
+    url:"https://decagon.ai/"
+  },
+  {
+    name: "Freenome - by Snapbrio",
+    image: Freenome,
+    url:"https://www.freenome.com/"
+  },
 ];
-
-
 
   return (
     <>
-     
- 
 
      <section className="bg-white py-8 md:py-12" id='projects'>
       <div className="max-w-7xl mx-auto px-2">
