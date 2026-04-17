@@ -336,19 +336,19 @@ function KeywordsInput({ value, onChange }) {
 }
 
 const CATEGORIES = [
-  "Services",
-  "Corporate Shoots",
-  "Event Shoots",
-  "Podcast Shoots",
-  "Professional Shoots",
-  "Business Portfolio",
-  "UI/UX Design",
-  "Animation 2d or 3d",
-  "Video Editing",
-  "Podcast",
-  "Figma",
-  "Technology",
-  "News"
+  "Social Media Marketing",
+  "Search Engine Optimization (SEO)",
+  "Search Engine Marketing (SEM)",
+  "Content Marketing",
+  "Email Marketing",
+  "Affiliate Marketing",
+  "Analytics and Data",
+  "Web Development",
+  "Mobile App Development",
+  "Desktop App Development",
+  "Game Development",
+  "Data Sceince (AI & ML)",
+  "Devops and Cloud Computing"
 ];
 
 const emptyForm = {
